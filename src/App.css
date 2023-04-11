@@ -1,38 +1,94 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.page-title {
+}
+
+.page-intro {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 650px;
 }
 
-.App-link {
-  color: #61dafb;
+.page-description {
+  text-indent: 2em;
+  margin-bottom: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.page-signature {
+  align-self: flex-end;
+  font-style: italic;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.route-tile {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 30%;
+  /* height: 45%; */
+  margin: 1%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.route-name {
+  font-size: 1em;
+  text-align: center;
+  height: 10%;
+  width: 95%;
+}
+
+.route-thumbnail.landscape {
+  max-width: 100%;
+  height: auto;
+}
+
+.route-thumbnail.portrait {
+  max-width: 57%;
+  height: auto;
+}
+
+.route-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.route-info div {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .page-title {
+    margin: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-intro {
+    font-size: 0.75em;
+  }
+
+  .route-name {
+    font-size: 0.75em;
+  }
+
+  .route-info div {
+    font-size: 0.75em;
   }
 }
