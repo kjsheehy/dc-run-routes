@@ -1,23 +1,22 @@
 import './App.css';
-import './Assets/';
+import RouteTile from './RouteTile.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="page-title">DC Run Routes</h1>
-        <div className="page-intro">
-          <p className="page-description">
-            Welcome to DC Run Routes, v1! This site showcases beautiful running
-            routes in and around DC. There's some info about each route,
-            including distance, location, and surface type, to help you find a
-            great run for you. There are also a number of photos taken along
-            each route to highlight the scenary you can expect to enjoy. Happy
-            running!
-          </p>
-          <p className="page-signature">-Kevin</p>
-        </div>
       </header>
+      <div className="page-intro">
+        <p className="page-description">
+          Welcome to DC Run Routes, v1! This site showcases beautiful running
+          routes in and around DC. There's some info about each route, including
+          distance, location, and surface type, to help you find a great run for
+          you. There are also a number of photos taken along each route to
+          highlight the scenary you can expect to enjoy. Happy running!
+        </p>
+        <p className="page-signature">-Kevin</p>
+      </div>
       <div className="content">
         <div className="route-tile">
           <h2 className="route-name">Georgetown Waterfront Bridges</h2>
@@ -33,20 +32,7 @@ function App() {
             <div className="route-type">Loop</div>
           </div>
         </div>
-        <div className="route-tile">
-          <h2 className="route-name">Teddy Roosevelt Island</h2>
-          <img
-            className="route-thumbnail landscape"
-            src="Assets/TeddyRooseveltInteriorLushDeer.jpeg"
-          />
-          <div className="route-info">
-            <div className="route-distance">2.0 mi</div>
-            <div className="route-location">N Alington</div>
-            <div className="route-surface">Trail, Boardwalk</div>
-            <div className="route-features">Flat</div>
-            <div className="route-type">Loop</div>
-          </div>
-        </div>
+        <RouteTile />
         <div className="route-tile">
           <h2 className="route-name">Windy Run</h2>
           <img
