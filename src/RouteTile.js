@@ -12,7 +12,11 @@ function RouteTile({
   return (
     <div className="route-tile">
       <h2 className="route-name">{name}</h2>
-      <img className="route-thumbnail" src={thumbnailSrc} />
+      <img
+        className="route-thumbnail landscape"
+        src={thumbnailSrc}
+        alt={name + ' photo'}
+      />
       <div className="route-info">
         <div className="route-distance">{distance.toFixed(1)} mi</div>
         <div className="route-location">{location}</div>
