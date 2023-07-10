@@ -1,19 +1,24 @@
 import './RouteTile.css';
 
-function RouteTile() {
+function RouteTile({
+  name,
+  thumbnailSrc,
+  distance,
+  location,
+  surface,
+  features,
+  type,
+}) {
   return (
     <div className="route-tile">
-      <h2 className="route-name">Teddy Roosevelt Island</h2>
-      <img
-        className="route-thumbnail landscape"
-        src="Assets/TeddyRooseveltInteriorLushDeer.jpeg"
-      />
+      <h2 className="route-name">{name}</h2>
+      <img className="route-thumbnail" src={thumbnailSrc} />
       <div className="route-info">
-        <div className="route-distance">2.0 mi</div>
-        <div className="route-location">N Alington</div>
-        <div className="route-surface">Trail, Boardwalk</div>
-        <div className="route-features">Flat</div>
-        <div className="route-type">Loop</div>
+        <div className="route-distance">{distance.toFixed(1)} mi</div>
+        <div className="route-location">{location}</div>
+        <div className="route-surface">{surface.join(', ')}</div>
+        <div className="route-features">{features.join(', ')}</div>
+        <div className="route-type">{type}</div>
       </div>
     </div>
   );

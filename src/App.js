@@ -2,6 +2,69 @@ import './App.css';
 import RouteTile from './RouteTile.js';
 
 function App() {
+  const routes = [
+    {
+      name: 'Georgetown Waterfront Bridges',
+      thumbnailSRC: 'Assets/KeyBridgeEast.jpg',
+      distance: 3.4,
+      extendable: false,
+      location: 'N Arlington',
+      surface: ['Paved Path', 'Sidewalk'],
+      features: ['Flat'],
+      type: 'Loop',
+    },
+    {
+      name: 'Teddy Roosevelt Island',
+      thumbnailSrc: 'Assets/TeddyRooseveltInteriorLushDeer.jpeg',
+      distance: 2.0,
+      extendable: false,
+      location: 'N Arlington',
+      surface: ['Trail', 'Boardwalk'],
+      features: ['Flat'],
+      type: 'Loop',
+    },
+    {
+      name: 'Windy Run',
+      thumbnailSRC: 'Assets/WindyRunPotomacEastSunriseFinn.jpeg',
+      distance: 1.5,
+      extendable: true,
+      location: 'N Arlington',
+      surface: ['Trail'],
+      features: ['Rocky', 'Stairs'],
+      type: 'Out & Back',
+    },
+    {
+      name: 'Hains Point',
+      thumbnailSRC: 'Assets/HainsPointSWSunset.jpeg',
+      distance: 2.9,
+      extendable: false,
+      location: 'SW D.C.',
+      surface: ['Road', 'Sidewalk'],
+      features: ['Flat'],
+      type: 'Loop',
+    },
+    {
+      name: 'National Arboretum',
+      thumbnailSRC: 'Assets/ArboretumCreek.jpeg',
+      distance: 3.0,
+      extendable: true,
+      location: 'NE D.C.',
+      surface: ['Road'],
+      features: ['Big Hills'],
+      type: 'Loop',
+    },
+    {
+      name: 'Old Town Waterfront',
+      thumbnailSRC: 'Assets/OldTownWaterfrontTownhouses.jpeg',
+      distance: 1.0,
+      extendable: true,
+      location: 'Alexandria',
+      surface: ['Paved Path'],
+      features: ['Flat'],
+      type: 'Out & Back',
+    },
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,77 +81,12 @@ function App() {
         <p className="page-signature">-Kevin</p>
       </div>
       <div className="content">
-        <div className="route-tile">
-          <h2 className="route-name">Georgetown Waterfront Bridges</h2>
-          <img
-            className="route-thumbnail landscape"
-            src="Assets/KeyBridgeEast.jpg"
-          />
-          <div className="route-info">
-            <div className="route-distance">3.4 mi</div>
-            <div className="route-location">N Arlington</div>
-            <div className="route-surface">Paved Path, Sidewalk</div>
-            <div className="route-features">Flat</div>
-            <div className="route-type">Loop</div>
-          </div>
-        </div>
-        <RouteTile />
-        <div className="route-tile">
-          <h2 className="route-name">Windy Run</h2>
-          <img
-            className="route-thumbnail landscape"
-            src="Assets/WindyRunPotomacEastSunriseFinn.jpeg"
-          />
-          <div className="route-info">
-            <div className="route-distance">1.5+ mi</div>
-            <div className="route-location">N Arlington</div>
-            <div className="route-surface">Trail</div>
-            <div className="route-features">Rocky, Stairs</div>
-            <div className="route-type">Out & Back</div>
-          </div>
-        </div>
-        <div className="route-tile">
-          <h2 className="route-name">Hains Point</h2>
-          <img
-            className="route-thumbnail landscape"
-            src="Assets/HainsPointSWSunset.jpeg"
-          />
-          <div className="route-info">
-            <div className="route-distance">4.0 mi</div>
-            <div className="route-location">SW D.C.</div>
-            <div className="route-surface">Road</div>
-            <div className="route-features">Flat</div>
-            <div className="route-type">Loop</div>
-          </div>
-        </div>
-        <div className="route-tile">
-          <h2 className="route-name">National Arboretum</h2>
-          <img
-            className="route-thumbnail portrait"
-            src="Assets/ArboretumCreek.jpeg"
-          />
-          <div className="route-info">
-            <div className="route-distance">3.0+ mi</div>
-            <div className="route-location">NE D.C.</div>
-            <div className="route-surface">Road</div>
-            <div className="route-features">Big Hills</div>
-            <div className="route-type">Loop</div>
-          </div>
-        </div>
-        <div className="route-tile">
-          <h2 className="route-name">Old Town Waterfront</h2>
-          <img
-            className="route-thumbnail landscape"
-            src="Assets/OldTownWaterfrontTownhouses.jpeg"
-          />
-          <div className="route-info">
-            <div className="route-distance">1.0-4.0 mi</div>
-            <div className="route-location">Alexandria</div>
-            <div className="route-surface">Paved Path</div>
-            <div className="route-features">Flat</div>
-            <div className="route-type">Out & Back</div>
-          </div>
-        </div>
+        <RouteTile {...routes[0]} />
+        <RouteTile {...routes[1]} />
+        <RouteTile {...routes[2]} />
+        <RouteTile {...routes[3]} />
+        <RouteTile {...routes[4]} />
+        <RouteTile {...routes[5]} />
       </div>
     </div>
   );
