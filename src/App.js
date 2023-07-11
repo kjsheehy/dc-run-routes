@@ -1,5 +1,5 @@
 import './App.css';
-import RouteTileContainer from './RouteTileContainer.js';
+import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
 
 function App() {
   const routes = [
