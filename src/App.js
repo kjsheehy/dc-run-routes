@@ -1,5 +1,7 @@
 import './App.css';
 import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
+import Intro from './components/Intro.js';
+import Header from './components/Header.js';
 
 function App() {
   const routes = [
@@ -72,16 +74,7 @@ function App() {
       <header className="App-header">
         <h1 className="page-title">DC Run Routes</h1>
       </header>
-      <div className="page-intro">
-        <p className="page-description">
-          Welcome to DC Run Routes, v1! This site showcases beautiful running
-          routes in and around DC. There's some info about each route, including
-          distance, location, and surface type, to help you find a great run for
-          you. There are also a number of photos taken along each route to
-          highlight the scenary you can expect to enjoy. Happy running!
-        </p>
-        <p className="page-signature">-Kevin</p>
-      </div>
+      <Intro />
       <RouteTileContainer routes={routes} />
     </div>
   );
