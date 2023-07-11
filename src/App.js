@@ -5,7 +5,8 @@ function App() {
   const routes = [
     {
       name: 'Georgetown Waterfront Bridges',
-      thumbnailSRC: './Assets/KeyBridgeEast.jpg',
+      thumbnailSrc: './Assets/KeyBridgeEast.jpg',
+      thumbnailIsPortrait: false,
       distance: 3.4,
       extendable: false,
       location: 'N Arlington',
@@ -25,7 +26,7 @@ function App() {
     },
     {
       name: 'Windy Run',
-      thumbnailSRC: './Assets/WindyRunPotomacEastSunriseFinn.jpeg',
+      thumbnailSrc: './Assets/WindyRunPotomacEastSunriseFinn.jpeg',
       distance: 1.5,
       extendable: true,
       location: 'N Arlington',
@@ -35,7 +36,7 @@ function App() {
     },
     {
       name: 'Hains Point',
-      thumbnailSRC: './Assets/HainsPointSWSunset.jpeg',
+      thumbnailSrc: './Assets/HainsPointSWSunset.jpeg',
       distance: 2.9,
       extendable: false,
       location: 'SW D.C.',
@@ -45,7 +46,8 @@ function App() {
     },
     {
       name: 'National Arboretum',
-      thumbnailSRC: './Assets/ArboretumCreek.jpeg',
+      thumbnailSrc: './Assets/ArboretumCreek.jpeg',
+      thumbnailIsPortrait: true,
       distance: 3.0,
       extendable: true,
       location: 'NE D.C.',
@@ -55,7 +57,7 @@ function App() {
     },
     {
       name: 'Old Town Waterfront',
-      thumbnailSRC: './Assets/OldTownWaterfrontTownhouses.jpeg',
+      thumbnailSrc: './Assets/OldTownWaterfrontTownhouses.jpeg',
       distance: 1.0,
       extendable: true,
       location: 'Alexandria',

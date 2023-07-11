@@ -3,17 +3,20 @@ import './RouteTile.css';
 function RouteTile({
   name,
   thumbnailSrc,
+  thumbnailIsPortrait,
   distance,
   location,
   surface,
   features,
   type,
 }) {
+  const thumbnailOrientation = thumbnailIsPortrait ? 'portrait' : 'landscape';
+
   return (
     <div className="route-tile">
       <h2 className="route-name">{name}</h2>
       <img
-        className="route-thumbnail landscape"
+        className={'route-thumbnail ' + thumbnailOrientation}
         src={thumbnailSrc}
         alt={name + ' photo'}
       />
