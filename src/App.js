@@ -1,5 +1,5 @@
 import './App.css';
-import RouteTile from './RouteTile.js';
+import RouteTileContainer from './RouteTileContainer.js';
 
 function App() {
   const routes = [
@@ -82,14 +82,7 @@ function App() {
         </p>
         <p className="page-signature">-Kevin</p>
       </div>
-      <div className="content">
-        <RouteTile {...routes[0]} />
-        <RouteTile {...routes[1]} />
-        <RouteTile {...routes[2]} />
-        <RouteTile {...routes[3]} />
-        <RouteTile {...routes[4]} />
-        <RouteTile {...routes[5]} />
-      </div>
+      <RouteTileContainer routes={routes} />
     </div>
   );
 }
