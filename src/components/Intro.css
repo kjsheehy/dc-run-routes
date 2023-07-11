@@ -1,0 +1,24 @@
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 650px;
+}
+
+.page-description {
+  text-indent: 2em;
+  margin-bottom: 0;
+}
+
+.page-signature {
+  align-self: flex-end;
+  font-style: italic;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .page-intro {
+    font-size: 0.75em;
+  }
+}
