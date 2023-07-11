@@ -71,9 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="page-title">DC Run Routes</h1>
-      </header>
+      <Header />
       <Intro />
       <RouteTileContainer routes={routes} />
     </div>
