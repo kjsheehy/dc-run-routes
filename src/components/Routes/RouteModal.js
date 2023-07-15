@@ -1,6 +1,7 @@
-import './RouteTile.css';
+import { useState } from 'react';
+import './RouteModal.css';
 
-function RouteTile({
+function RouteModal({
   name,
   thumbnailSrc,
   thumbnailIsPortrait,
@@ -9,16 +10,9 @@ function RouteTile({
   surface,
   features,
   type,
-  onClick,
 }) {
-  const thumbnailOrientation = thumbnailIsPortrait ? 'portrait' : 'landscape';
-
-  function clickHandler() {
-    console.log(`${name} was clicked!`);
-  }
-
   return (
-    <div className="route-tile" onClick={clickHandler}>
+    <div className="route-modal">
       <h2 className="route-name">{name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}
@@ -36,4 +30,4 @@ function RouteTile({
   );
 }
 
-export default RouteTile;
+export default RouteModal;
