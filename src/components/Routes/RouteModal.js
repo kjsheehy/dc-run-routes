@@ -1,4 +1,5 @@
 import './RouteModal.css';
+import Modal from '../UI/Modal';
 
 function RouteModal(props) {
   const thumbnailOrientation = props.thumbnailIsPortrait
@@ -6,7 +7,7 @@ function RouteModal(props) {
     : 'landscape';
 
   return (
-    <div className="route-tile">
+    <Modal className="route-tile">
       <h2 className="route-name">{props.name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}
@@ -20,7 +21,7 @@ function RouteModal(props) {
         <div className="route-features">{props.features.join(', ')}</div>
         <div className="route-type">{props.type}</div>
       </div>
-    </div>
+    </Modal>
   );
 }
 
