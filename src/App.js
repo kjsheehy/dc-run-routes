@@ -89,9 +89,7 @@ function App() {
           <RouteModal {...routes[0]} />
         </Modal> */}
       </div>
-      <Modal>
-        <RouteModal {...routes[0]} />
-      </Modal>
+      <RouteModal {...routes[0]} />
     </div>
   );
 }
