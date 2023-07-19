@@ -7,7 +7,7 @@ function RouteModal(props) {
     : 'landscape';
 
   return (
-    <Modal className="route-tile">
+    <Modal className="route-modal">
       <h2 className="route-name">{props.name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}

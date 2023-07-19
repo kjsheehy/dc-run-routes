@@ -8,6 +8,8 @@
   background-color: white;
   width: 500px;
   max-width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 .overlay {
@@ -21,4 +23,12 @@
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   z-index: 5;
+}
+
+.close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 11;
+  margin-right: 5px;
 }
