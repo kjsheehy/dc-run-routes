@@ -7,7 +7,7 @@ function RouteModal(props) {
     : 'landscape';
 
   return (
-    <Modal className="route-tile">
+    <div>
       <h2 className="route-name">{props.name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}
@@ -21,7 +21,7 @@ function RouteModal(props) {
         <div className="route-features">{props.features.join(', ')}</div>
         <div className="route-type">{props.type}</div>
       </div>
-    </Modal>
+    </div>
   );
 }
 

@@ -2,6 +2,9 @@ import './App.css';
 import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
 import Intro from './components/Intro.js';
 import Header from './components/Header.js';
+import Modal from './components/UI/Modal';
+import RouteModal from './components/Routes/RouteModal';
+
 const homepage = './dc-run-routes';
 
 function App() {
@@ -77,10 +80,19 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <Header />
-      <Intro />
-      <RouteTileContainer routes={routes} />
+    <div>
+      <div className="App">
+        <Header />
+        <Intro />
+        <RouteTileContainer routes={routes} />
+        {/* <Modal>
+          <RouteModal {...routes[0]} />
+        </Modal> */}
+      </div>
+      <div className="modal">
+        <RouteModal {...routes[0]} />
+      </div>
+      <div className="overlay"></div>
     </div>
   );
 }
