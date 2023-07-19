@@ -80,16 +80,10 @@ function App() {
   ];
 
   return (
-    <div>
-      <div className="App">
-        <Header />
-        <Intro />
-        <RouteTileContainer routes={routes} />
-        {/* <Modal>
-          <RouteModal {...routes[0]} />
-        </Modal> */}
-      </div>
-      <RouteModal {...routes[0]} />
+    <div className="App">
+      <Header />
+      <Intro />
+      <RouteTileContainer routes={routes} />
     </div>
   );
 }
