@@ -89,10 +89,9 @@ function App() {
           <RouteModal {...routes[0]} />
         </Modal> */}
       </div>
-      <div className="modal">
+      <Modal>
         <RouteModal {...routes[0]} />
-      </div>
-      <div className="overlay"></div>
+      </Modal>
     </div>
   );
 }
