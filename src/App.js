@@ -2,11 +2,15 @@ import './App.css';
 import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
 import Intro from './components/Intro.js';
 import Header from './components/Header.js';
+import Modal from './components/UI/Modal';
+import RouteModal from './components/Routes/RouteModal';
+
 const homepage = './dc-run-routes';
 
 function App() {
   const routes = [
     {
+      id: 0,
       name: 'Georgetown Waterfront Bridges',
       thumbnailSrc: `${homepage}/Assets/KeyBridgeEast.jpg`,
       thumbnailIsPortrait: false,
@@ -18,6 +22,7 @@ function App() {
       type: 'Loop',
     },
     {
+      id: 1,
       name: 'Teddy Roosevelt Island',
       thumbnailSrc: `${homepage}/Assets/TeddyRooseveltInteriorLushDeer.jpeg`,
       distance: 2.0,
@@ -28,6 +33,7 @@ function App() {
       type: 'Loop',
     },
     {
+      id: 2,
       name: 'Windy Run',
       thumbnailSrc: `${homepage}/Assets/WindyRunPotomacEastSunriseFinn.jpeg`,
       distance: 1.5,
@@ -38,6 +44,7 @@ function App() {
       type: 'Out & Back',
     },
     {
+      id: 3,
       name: 'Hains Point',
       thumbnailSrc: `${homepage}/Assets/HainsPointSWSunset.jpeg`,
       distance: 2.9,
@@ -48,6 +55,7 @@ function App() {
       type: 'Loop',
     },
     {
+      id: 4,
       name: 'National Arboretum',
       thumbnailSrc: `${homepage}/Assets/ArboretumCreek.jpeg`,
       thumbnailIsPortrait: true,
@@ -59,6 +67,7 @@ function App() {
       type: 'Loop',
     },
     {
+      id: 5,
       name: 'Old Town Waterfront',
       thumbnailSrc: `${homepage}/Assets/OldTownWaterfrontTownhouses.jpeg`,
       distance: 1.0,

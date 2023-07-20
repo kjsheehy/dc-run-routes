@@ -1,24 +1,13 @@
-import './RouteTile.css';
-import RouteModal from '../Routes/RouteModal';
-import { useState } from 'react';
+import './RouteModal.css';
+import Modal from '../UI/Modal';
 
-function RouteTile(props) {
+function RouteModal(props) {
   const thumbnailOrientation = props.thumbnailIsPortrait
     ? 'portrait'
     : 'landscape';
-  const [selected, setSelected] = useState();
-
-  function clickHandler() {
-    if (!selected) setSelected(true);
-  }
-
-  function closeRouteModal() {
-    setSelected(false);
-  }
 
   return (
-    <div className="route-tile" onClick={clickHandler}>
-      {selected && <RouteModal {...props} close={closeRouteModal} />}
+    <Modal className="route-modal" close={props.close}>
       <h2 className="route-name">{props.name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}
@@ -32,8 +21,8 @@ function RouteTile(props) {
         <div className="route-features">{props.features.join(', ')}</div>
         <div className="route-type">{props.type}</div>
       </div>
-    </div>
+    </Modal>
   );
 }
 
-export default RouteTile;
+export default RouteModal;
