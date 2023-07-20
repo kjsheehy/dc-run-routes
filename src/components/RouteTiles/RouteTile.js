@@ -9,13 +9,16 @@ function RouteTile(props) {
   const [selected, setSelected] = useState();
 
   function clickHandler() {
-    console.log(`${props.name} was clicked!`);
-    setSelected(true);
+    if (!selected) setSelected(true);
+  }
+
+  function closeRouteModal() {
+    setSelected(false);
   }
 
   return (
     <div className="route-tile" onClick={clickHandler}>
-      {selected && <RouteModal {...props} />}
+      {selected && <RouteModal {...props} close={closeRouteModal} />}
       <h2 className="route-name">{props.name}</h2>
       <img
         className={'route-thumbnail ' + thumbnailOrientation}

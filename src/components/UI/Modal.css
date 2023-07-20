@@ -21,7 +21,6 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
   z-index: 5;
 }
 
@@ -31,4 +30,6 @@
   right: 0;
   z-index: 11;
   margin-right: 5px;
+  height: 5rem;
+  font-size: x-large;
 }
