@@ -1,7 +1,12 @@
 import './RouteFilter.css';
+import RangeSlider from '../MUI-Libary/RangeSlider';
 
 function RouteFilter(props) {
-  return <div>Route Filter Here</div>;
+  return (
+    <div className="route-filter">
+      <RangeSlider />
+    </div>
+  );
 }
 
 export default RouteFilter;
