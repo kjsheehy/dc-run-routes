@@ -2,8 +2,7 @@ import './App.css';
 import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
 import Intro from './components/Intro.js';
 import Header from './components/Header.js';
-import Modal from './components/UI/Modal';
-import RouteModal from './components/Routes/RouteModal';
+import { useState } from 'react';
 
 const homepage = './dc-run-routes';
 
@@ -79,10 +78,15 @@ function App() {
     },
   ];
 
+  const [showIntro, setShowIntro] = useState(true);
+  function closeIntro() {
+    setShowIntro(false);
+  }
+
   return (
     <div className="App">
       <Header />
-      <Intro />
+      {showIntro && <Intro close={closeIntro} />}
       <RouteTileContainer routes={routes} />
     </div>
   );

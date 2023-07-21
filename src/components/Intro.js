@@ -1,8 +1,9 @@
 import './Intro.css';
+import Modal from './UI/Modal';
 
-function Intro() {
+function Intro(props) {
   return (
-    <div className="page-intro">
+    <Modal close={props.close} className="page-intro">
       <p className="page-description">
         Welcome to DC Run Routes, v1! This site showcases beautiful running
         routes in and around DC. There's some info about each route, including
@@ -11,7 +12,7 @@ function Intro() {
         highlight the scenary you can expect to enjoy. Happy running!
       </p>
       <p className="page-signature">-Kevin</p>
-    </div>
+    </Modal>
   );
 }
 

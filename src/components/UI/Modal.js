@@ -3,7 +3,7 @@ import './Modal.css';
 function Modal(props) {
   return (
     <div>
-      <div className="modal">
+      <div className={'modal ' + props.className}>
         <div className="close" onClick={props.close}>
           &times;
         </div>
