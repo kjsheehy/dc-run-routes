@@ -1,7 +1,8 @@
 import './App.css';
-import RouteTileContainer from './components/RouteTiles/RouteTileContainer.js';
-import Intro from './components/Intro.js';
-import Header from './components/Header.js';
+import RouteTileContainer from './components/RouteTiles/RouteTileContainer';
+import Intro from './components/Intro';
+import Header from './components/Header';
+import RouteFilter from './components/Routes/RouteFilter';
 import { useState } from 'react';
 
 const homepage = './dc-run-routes';
@@ -85,8 +86,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       {showIntro && <Intro close={closeIntro} />}
+      <Header />
+      <RouteFilter />
       <RouteTileContainer routes={routes} />
     </div>
   );
