@@ -86,18 +86,21 @@ function App() {
 
   const [params, setParams] = useState({
     distance: [0, 10],
+    locations: [
+      'NE D.C.',
+      'SE D.C.',
+      'SW D.C.',
+      'NW D.C.',
+      'N Arlington',
+      'Alexandria',
+    ],
   });
-
-  function updateParams(newParams) {
-    //console.log(newParams);
-    setParams(newParams);
-  }
 
   return (
     <div className="App">
       {showIntro && <Intro close={closeIntro} />}
       <Header />
-      <RouteFilter updateParams={updateParams} />
+      <RouteFilter setParams={setParams} params={params} />
       <RouteTileContainer routes={routes} params={params} />
     </div>
   );
