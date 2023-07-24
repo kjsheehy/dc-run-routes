@@ -32,7 +32,7 @@ export default function MultipleSelectCheckmarks(props) {
     props.setParams((prevParams) => {
       return {
         ...prevParams,
-        locations: value,
+        [props.paramKey]: value,
       };
     });
   };
