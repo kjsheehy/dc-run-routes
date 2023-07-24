@@ -94,6 +94,7 @@ function App() {
       'N Arlington',
       'Alexandria',
     ],
+    surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
   });
 
   return (

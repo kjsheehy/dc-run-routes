@@ -12,6 +12,8 @@ function RouteFilter(props) {
     'Alexandria',
   ];
 
+  const surfaces = ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'];
+
   return (
     <div className="route-filter">
       <div className="route-distance">
@@ -22,7 +24,17 @@ function RouteFilter(props) {
         <MultipleSelectCheckmarks
           values={locations}
           params={props.params.locations}
+          paramKey="locations"
           label="Location"
+          setParams={props.setParams}
+        />
+      </div>
+      <div className="route-surface">
+        <MultipleSelectCheckmarks
+          values={surfaces}
+          params={props.params.surfaces}
+          paramKey="surfaces"
+          label="Surface"
           setParams={props.setParams}
         />
       </div>
