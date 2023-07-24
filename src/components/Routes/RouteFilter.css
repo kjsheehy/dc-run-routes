@@ -1,4 +1,6 @@
 .route-filter {
   width: 98%;
   border: 1px solid;
+  display: flex;
+  flex-direction: row;
 }
