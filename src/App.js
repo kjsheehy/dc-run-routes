@@ -84,12 +84,21 @@ function App() {
     setShowIntro(false);
   }
 
+  const [params, setParams] = useState({
+    distance: [0, 10],
+  });
+
+  function updateParams(newParams) {
+    //console.log(newParams);
+    setParams(newParams);
+  }
+
   return (
     <div className="App">
       {showIntro && <Intro close={closeIntro} />}
       <Header />
-      <RouteFilter />
-      <RouteTileContainer routes={routes} />
+      <RouteFilter updateParams={updateParams} />
+      <RouteTileContainer routes={routes} params={params} />
     </div>
   );
 }

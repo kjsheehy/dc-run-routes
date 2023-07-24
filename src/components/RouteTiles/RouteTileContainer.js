@@ -2,7 +2,13 @@ import RouteTile from './RouteTile.js';
 import './RouteTileContainer.css';
 
 function RouteTileContainer(props) {
-  const routeTiles = props.routes.map((route) => (
+  const matchingRoutes = props.routes.filter(
+    (route) =>
+      route.distance >= props.params.distance[0] &&
+      route.distance <= props.params.distance[1]
+  );
+
+  const routeTiles = matchingRoutes.map((route) => (
     <RouteTile {...route} key={route.id} />
   ));
   let routeTileContent = <p>No routes found.</p>;
