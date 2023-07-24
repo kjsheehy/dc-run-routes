@@ -95,6 +95,7 @@ function App() {
       'Alexandria',
     ],
     surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
+    types: ['Loop', 'Out & Back'],
   });
 
   return (

@@ -7,7 +7,10 @@ function RouteTileContainer(props) {
       route.distance >= props.params.distance[0] &&
       route.distance <= props.params.distance[1] &&
       props.params.locations.includes(route.location) &&
-      props.params.surfaces.some((surface) => route.surface.includes(surface))
+      props.params.surfaces.some((surface) =>
+        route.surface.includes(surface)
+      ) &&
+      props.params.types.some((type) => route.type.includes(type))
   );
 
   const routeTiles = matchingRoutes.map((route) => (
