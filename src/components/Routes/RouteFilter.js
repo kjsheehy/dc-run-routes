@@ -16,6 +16,8 @@ function RouteFilter(props) {
 
   const types = ['Loop', 'Out & Back'];
 
+  const features = ['Flat', 'Rocky', 'Big Hills', 'Rolling'];
+
   return (
     <div className="route-filter">
       <div className="route-distance">
@@ -46,6 +48,15 @@ function RouteFilter(props) {
           params={props.params.types}
           paramKey="types"
           label="Route Type"
+          setParams={props.setParams}
+        />
+      </div>
+      <div className="route-features">
+        <MultipleSelectCheckmarks
+          values={features}
+          params={props.params.features}
+          paramKey="features"
+          label="Features"
           setParams={props.setParams}
         />
       </div>

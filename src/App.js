@@ -40,7 +40,7 @@ function App() {
       extendable: true,
       location: 'N Arlington',
       surface: ['Trail'],
-      features: ['Rocky', 'Stairs'],
+      features: ['Rocky'],
       type: 'Out & Back',
     },
     {
@@ -96,6 +96,7 @@ function App() {
     ],
     surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
     types: ['Loop', 'Out & Back'],
+    features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
   });
 
   return (
