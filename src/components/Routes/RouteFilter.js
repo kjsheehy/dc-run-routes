@@ -21,7 +21,7 @@ function RouteFilter(props) {
   return (
     <div className="route-filter">
       <div className="route-distance filter-item">
-        <label for="distance-slider">Distance</label>
+        <label htmlFor="distance-slider">Distance</label>
         <RangeSlider name="distance-slider" setParams={props.setParams} />
       </div>
       <div className="route-location filter-item">
