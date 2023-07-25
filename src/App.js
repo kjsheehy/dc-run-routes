@@ -85,7 +85,7 @@ function App() {
   }
 
   const [params, setParams] = useState({
-    distance: [0, 10],
+    distance: [1, 10],
     locations: [
       'NE D.C.',
       'SE D.C.',
