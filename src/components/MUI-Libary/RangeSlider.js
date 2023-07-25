@@ -7,7 +7,7 @@ function valuetext(value) {
 }
 
 export default function RangeSlider(props) {
-  const [value, setValue] = useState([0, 10]);
+  const [value, setValue] = useState([1, 10]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -19,15 +19,29 @@ export default function RangeSlider(props) {
     });
   };
 
+  const marks = [
+    { value: 1, label: '1 mi' },
+    { value: 2 },
+    { value: 3 },
+    { value: 4 },
+    { value: 5 },
+    { value: 6 },
+    { value: 7 },
+    { value: 8 },
+    { value: 9 },
+    { value: 10, label: '10 mi' },
+  ];
+
   return (
-    <Box sx={{ width: 150 }}>
+    <Box sx={{ width: 200 }}>
       <Slider
         value={value}
         onChange={handleChange}
-        valueLabelDisplay="on"
+        valueLabelDisplay="auto"
         getAriaValueText={valuetext}
-        min={0}
+        min={1}
         max={10}
+        marks={marks}
       />
     </Box>
   );
