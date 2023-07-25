@@ -33,7 +33,7 @@ export default function RangeSlider(props) {
   ];
 
   return (
-    <Box sx={{ width: 200 }}>
+    <Box sx={{ width: 300 }}>
       <Slider
         value={value}
         onChange={handleChange}
@@ -42,6 +42,7 @@ export default function RangeSlider(props) {
         min={1}
         max={10}
         marks={marks}
+        className="distance-slider"
       />
     </Box>
   );

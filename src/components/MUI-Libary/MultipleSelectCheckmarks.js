@@ -6,6 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import './MultipleSelectCheckmarks.css';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -39,7 +40,7 @@ export default function MultipleSelectCheckmarks(props) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 200 }}>
+      <FormControl sx={{ m: 1, width: 200 }} className="form-control">
         <InputLabel id="demo-multiple-checkbox-label">{props.label}</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
