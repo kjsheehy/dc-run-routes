@@ -99,9 +99,13 @@ function App() {
     features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
   });
 
-  fetch(`http://localhost:3006/`)
-    .then((res) => res.text())
-    .then((data) => console.log(data));
+  async function fetchRoutes() {
+    const response = await fetch(`http://localhost:3006/`);
+    const data = await response.text();
+    console.log(data);
+  }
+
+  fetchRoutes();
 
   return (
     <div className="App">
