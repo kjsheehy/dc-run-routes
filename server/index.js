@@ -78,8 +78,8 @@ const routes = [
   },
 ];
 
-app.get('/', (req, res) => {
-  res.send('Hello world!');
+app.get('/routes', (req, res) => {
+  res.send(routes);
 });
 
 app.listen(port, () => {
