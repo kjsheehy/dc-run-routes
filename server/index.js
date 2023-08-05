@@ -92,6 +92,7 @@ app.get('/routes', (req, res) => {
 app.post('/routes', (req, res) => {
   //const params = req.body;
   console.log(req.body);
+  res.send(req.body);
 });
 
 app.listen(port, () => {
