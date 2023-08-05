@@ -28,13 +28,18 @@ function App() {
 
   const [routes, setRoutes] = useState([]);
 
-  async function fetchRoutes() {
-    const response = await fetch(`http://localhost:3006/routes`);
-    const data = await response.json();
-    setRoutes(data);
-  }
+  // async function fetchRoutes() {
+  //   const response = await fetch(`http://localhost:3006/routes`);
+  //   const data = await response.json();
+  //   setRoutes(data);
+  // }
+  fetch(`http://localhost:3006/routes`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(params),
+  });
 
-  fetchRoutes();
+  // fetchRoutes();
 
   return (
     <div className="App">

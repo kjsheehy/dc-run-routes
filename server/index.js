@@ -1,9 +1,16 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const port = 3006;
 
 app.use(cors());
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 const homepage = './dc-run-routes';
 
@@ -80,6 +87,11 @@ const routes = [
 
 app.get('/routes', (req, res) => {
   res.send(routes);
+});
+
+app.post('/routes', (req, res) => {
+  //const params = req.body;
+  console.log(req.body);
 });
 
 app.listen(port, () => {
