@@ -21,7 +21,7 @@ function RouteFinder(props) {
   const [routes, setRoutes] = useState([]);
 
   async function fetchRoutes() {
-    const response = await fetch(`http://localhost:3006/routes`, {
+    const response = await fetch(`http://kjsheehy.com/api/routes`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(params),

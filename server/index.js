@@ -85,11 +85,7 @@ const routes = [
   },
 ];
 
-app.get('/routes', (req, res) => {
-  res.send(routes);
-});
-
-app.post('/routes', (req, res) => {
+app.post('/api/routes', (req, res) => {
   const params = req.body;
   const matchingRoutes = routes.filter(
     (route) =>
