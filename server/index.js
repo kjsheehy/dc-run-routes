@@ -90,9 +90,17 @@ app.get('/routes', (req, res) => {
 });
 
 app.post('/routes', (req, res) => {
-  //const params = req.body;
-  console.log(req.body);
-  res.send(req.body);
+  const params = req.body;
+  const matchingRoutes = routes.filter(
+    (route) =>
+      route.distance >= params.distance[0] &&
+      route.distance <= params.distance[1] &&
+      params.locations.includes(route.location) &&
+      params.surfaces.some((surface) => route.surface.includes(surface)) &&
+      params.types.some((type) => route.type.includes(type)) &&
+      params.features.some((feature) => route.features.includes(feature))
+  );
+  res.send(matchingRoutes);
 });
 
 app.listen(port, () => {
