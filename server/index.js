@@ -12,6 +12,7 @@ app.use(
   })
 );
 
+const urlBase = '/dc-run-routes/api';
 const homepage = './dc-run-routes';
 
 const routes = [
@@ -85,7 +86,7 @@ const routes = [
   },
 ];
 
-app.post('/api/routes', (req, res) => {
+app.post(`${urlBase}/routes`, (req, res) => {
   const params = req.body;
   const matchingRoutes = routes.filter(
     (route) =>
