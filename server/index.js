@@ -12,16 +12,17 @@ app.use(
     extended: true,
   })
 );
+app.use(express.static(path.join(__dirname, 'Assets')));
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 const urlBase = '/dc-run-routes/api';
-const homepage = path.join('..', 'client', 'build');
+const assetURLBase = '.';
 
 const routes = [
   {
     id: 0,
     name: 'Georgetown Waterfront Bridges',
-    thumbnailSrc: `${homepage}/Assets/KeyBridgeEast.jpg`,
+    thumbnailSrc: `${assetURLBase}/KeyBridgeEast.jpg`,
     thumbnailIsPortrait: false,
     distance: 3.4,
     extendable: false,
@@ -33,7 +34,7 @@ const routes = [
   {
     id: 1,
     name: 'Teddy Roosevelt Island',
-    thumbnailSrc: `${homepage}/Assets/TeddyRooseveltInteriorLushDeer.jpeg`,
+    thumbnailSrc: `${assetURLBase}/TeddyRooseveltInteriorLushDeer.jpeg`,
     distance: 2.0,
     extendable: false,
     location: 'N Arlington',
@@ -44,7 +45,7 @@ const routes = [
   {
     id: 2,
     name: 'Windy Run',
-    thumbnailSrc: `${homepage}/Assets/WindyRunPotomacEastSunriseFinn.jpeg`,
+    thumbnailSrc: `${assetURLBase}/WindyRunPotomacEastSunriseFinn.jpeg`,
     distance: 1.5,
     extendable: true,
     location: 'N Arlington',
@@ -55,7 +56,7 @@ const routes = [
   {
     id: 3,
     name: 'Hains Point',
-    thumbnailSrc: `${homepage}/Assets/HainsPointSWSunset.jpeg`,
+    thumbnailSrc: `${assetURLBase}/HainsPointSWSunset.jpeg`,
     distance: 2.9,
     extendable: false,
     location: 'SW D.C.',
@@ -66,7 +67,7 @@ const routes = [
   {
     id: 4,
     name: 'National Arboretum',
-    thumbnailSrc: `${homepage}/Assets/ArboretumCreek.jpeg`,
+    thumbnailSrc: `${assetURLBase}/ArboretumCreek.jpeg`,
     thumbnailIsPortrait: true,
     distance: 3.0,
     extendable: true,
@@ -78,7 +79,7 @@ const routes = [
   {
     id: 5,
     name: 'Old Town Waterfront',
-    thumbnailSrc: `${homepage}/Assets/OldTownWaterfrontTownhouses.jpeg`,
+    thumbnailSrc: `${assetURLBase}/OldTownWaterfrontTownhouses.jpeg`,
     distance: 1.0,
     extendable: true,
     location: 'Alexandria',

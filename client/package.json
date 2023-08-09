@@ -1,5 +1,5 @@
 {
-  "name": "dc-run-routes",
+  "name": "client",
   "homepage": ".",
   "version": "0.1.0",
   "private": true,
@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3006",
   "eslintConfig": {
     "extends": [
       "react-app",
