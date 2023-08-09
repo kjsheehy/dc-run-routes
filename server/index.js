@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
@@ -11,9 +12,10 @@ app.use(
     extended: true,
   })
 );
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 const urlBase = '/dc-run-routes/api';
-const homepage = './dc-run-routes';
+const homepage = path.join('..', 'client', 'build');
 
 const routes = [
   {
@@ -85,6 +87,11 @@ const routes = [
     type: 'Out & Back',
   },
 ];
+
+app.get('/dc-run-routes', (req, res) => {
+  console.log(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+});
 
 app.post(`${urlBase}/routes`, (req, res) => {
   const params = req.body;

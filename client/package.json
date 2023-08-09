@@ -1,6 +1,6 @@
 {
   "name": "dc-run-routes",
-  "homepage": "https://kjsheehy.com/dc-run-routes",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
