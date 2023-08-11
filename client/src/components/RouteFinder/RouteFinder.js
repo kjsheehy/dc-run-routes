@@ -21,7 +21,7 @@ function RouteFinder(props) {
   const [routes, setRoutes] = useState([]);
 
   async function fetchRoutes() {
-    const response = await fetch(`./dc-run-routes/api/routes`, {
+    const response = await fetch(`./api/routes`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(params),

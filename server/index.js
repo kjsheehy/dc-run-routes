@@ -12,8 +12,11 @@ app.use(
     extended: true,
   })
 );
-app.use(express.static(path.join(__dirname, 'Assets')));
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use('/dc-run-routes', express.static(path.join(__dirname, 'Assets')));
+app.use(
+  '/dc-run-routes',
+  express.static(path.join(__dirname, '..', 'client', 'build'))
+);
 
 const urlBase = '/dc-run-routes/api';
 const assetURLBase = '.';
@@ -89,8 +92,9 @@ const routes = [
   },
 ];
 
-app.get('/dc-run-routes', (req, res) => {
+app.get('/dc-run-routes/', (req, res) => {
   console.log(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  console.log(path.join(__dirname, '..', 'client', 'build'));
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
