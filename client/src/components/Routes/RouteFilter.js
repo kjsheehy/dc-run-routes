@@ -22,7 +22,11 @@ function RouteFilter(props) {
     <div className="route-filter">
       <div className="route-distance filter-item">
         <label htmlFor="distance-slider">Distance</label>
-        <RangeSlider name="distance-slider" setParams={props.setParams} />
+        <RangeSlider
+          name="distance-slider"
+          setParams={props.setParams}
+          fetchRoutes={props.fetchRoutes}
+        />
       </div>
       <div className="route-location filter-item">
         <MultipleSelectCheckmarks
@@ -31,6 +35,7 @@ function RouteFilter(props) {
           paramKey="locations"
           label="Location"
           setParams={props.setParams}
+          fetchRoutes={props.fetchRoutes}
         />
       </div>
       <div className="route-surface filter-item">
@@ -40,6 +45,7 @@ function RouteFilter(props) {
           paramKey="surfaces"
           label="Surface"
           setParams={props.setParams}
+          fetchRoutes={props.fetchRoutes}
         />
       </div>
       <div className="route-type filter-item">
@@ -49,6 +55,7 @@ function RouteFilter(props) {
           paramKey="types"
           label="Route Type"
           setParams={props.setParams}
+          fetchRoutes={props.fetchRoutes}
         />
       </div>
       <div className="route-features filter-item">
@@ -58,6 +65,7 @@ function RouteFilter(props) {
           paramKey="features"
           label="Features"
           setParams={props.setParams}
+          fetchRoutes={props.fetchRoutes}
         />
       </div>
     </div>

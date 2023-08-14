@@ -17,6 +17,7 @@ export default function RangeSlider(props) {
         distance: newValue,
       };
     });
+    props.fetchRoutes();
   };
 
   const marks = [
