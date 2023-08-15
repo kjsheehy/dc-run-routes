@@ -22,7 +22,7 @@ const urlBase = '/dc-run-routes/api';
 
 // In local dev: 'http://localhost:3006/dc-run-routes'
 // In prod: '.'
-const assetURLBase = 'http://localhost:3006/dc-run-routes';
+const assetURLBase = '.';
 
 const routes = [
   {

@@ -26,7 +26,7 @@ function RouteFinder(props) {
     const response = await fetch(
       //In development: `http://localhost:3006/dc-run-routes/api/routes`
       // In prod: `./api/routes`
-      `http://localhost:3006/dc-run-routes/api/routes`,
+      `./api/routes`,
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
