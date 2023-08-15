@@ -1,6 +1,7 @@
 import RouteTileContainer from './RouteTileContainer';
 import RouteFilter from '../Routes/RouteFilter';
 import { useState } from 'react';
+import './RouteFinder.css';
 
 function RouteFinder(props) {
   const [params, setParams] = useState({
@@ -22,7 +23,6 @@ function RouteFinder(props) {
 
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
-    console.log('Routes fetched');
     const response = await fetch(
       //In development: `http://localhost:3006/dc-run-routes/api/routes`
       // In prod: `./api/routes`
@@ -41,7 +41,7 @@ function RouteFinder(props) {
   if (!routes) fetchRoutes(params);
 
   return (
-    <div>
+    <div className="route-finder">
       <RouteFilter params={params} fetchRoutes={fetchRoutes} />
       <RouteTileContainer routes={routes} />
     </div>

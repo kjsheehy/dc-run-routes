@@ -26,11 +26,13 @@ function RouteTile(props) {
         alt={props.name + ' photo'}
       />
       <div className="route-info">
-        <div className="route-distance">{props.distance.toFixed(1)} mi</div>
-        <div className="route-location">{props.location}</div>
-        <div className="route-surface">{props.surface.join(', ')}</div>
-        <div className="route-features">{props.features.join(', ')}</div>
-        <div className="route-type">{props.type}</div>
+        <div className="route-tile-distance">
+          {props.distance.toFixed(1)} mi
+        </div>
+        <div className="route-tile-location">{props.location}</div>
+        <div className="route-tile-surface">{props.surface.join(', ')}</div>
+        <div className="route-tile-features">{props.features.join(', ')}</div>
+        <div className="route-tile-type">{props.type}</div>
       </div>
     </div>
   );

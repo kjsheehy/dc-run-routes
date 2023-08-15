@@ -96,8 +96,6 @@ const routes = [
 ];
 
 app.get('/dc-run-routes/', (req, res) => {
-  console.log(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-  console.log(path.join(__dirname, '..', 'client', 'build'));
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
