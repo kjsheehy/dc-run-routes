@@ -30,13 +30,13 @@ export default function MultipleSelectCheckmarks(props) {
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value
     );
-    props.setParams((prevParams) => {
-      return {
-        ...prevParams,
-        [props.paramKey]: value,
-      };
-    });
-    props.fetchRoutes();
+
+    const newParams = {
+      ...props.params,
+      [props.paramKey]: value,
+    };
+    props.setParams(newParams);
+    props.fetchRoutes(newParams);
   };
 
   return (
@@ -55,7 +55,9 @@ export default function MultipleSelectCheckmarks(props) {
         >
           {props.values.map((val) => (
             <MenuItem key={val} value={val}>
-              <Checkbox checked={props.params.indexOf(val) > -1} />
+              <Checkbox
+                checked={props.params[props.paramKey].indexOf(val) > -1}
+              />
               <ListItemText primary={val} />
             </MenuItem>
           ))}

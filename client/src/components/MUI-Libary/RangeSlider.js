@@ -11,13 +11,13 @@ export default function RangeSlider(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    props.setParams((prevParams) => {
-      return {
-        ...prevParams,
-        distance: newValue,
-      };
-    });
-    props.fetchRoutes();
+    const newParams = {
+      ...props.params,
+      distance: newValue,
+    };
+
+    props.setParams(newParams);
+    props.fetchRoutes(newParams);
   };
 
   const marks = [

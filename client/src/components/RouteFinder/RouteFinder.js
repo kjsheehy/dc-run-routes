@@ -20,7 +20,10 @@ function RouteFinder(props) {
 
   const [routes, setRoutes] = useState(false);
 
-  async function fetchRoutes() {
+  async function fetchRoutes(newParams) {
+    console.log(params);
+    console.log(newParams);
+
     const response = await fetch(
       //In development: `http://localhost:3006/dc-run-routes/api/routes`
       // In prod: `./api/routes`
@@ -28,7 +31,7 @@ function RouteFinder(props) {
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(params),
+        body: JSON.stringify(newParams),
       }
     );
     const returnedRoutes = await response.json();
@@ -36,7 +39,7 @@ function RouteFinder(props) {
   }
 
   //Fetch routes only on initial render. Subsequent fetches will be called by the filter components on each change in their values.
-  if (!routes) fetchRoutes();
+  if (!routes) fetchRoutes(params);
 
   return (
     <div>
