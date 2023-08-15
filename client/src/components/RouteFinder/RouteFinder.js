@@ -21,9 +21,8 @@ function RouteFinder(props) {
   const [routes, setRoutes] = useState(false);
 
   async function fetchRoutes(newParams) {
-    console.log(params);
-    console.log(newParams);
-
+    if (params !== newParams) setParams(newParams);
+    console.log('Routes fetched');
     const response = await fetch(
       //In development: `http://localhost:3006/dc-run-routes/api/routes`
       // In prod: `./api/routes`
@@ -43,11 +42,7 @@ function RouteFinder(props) {
 
   return (
     <div>
-      <RouteFilter
-        setParams={setParams}
-        params={params}
-        fetchRoutes={fetchRoutes}
-      />
+      <RouteFilter params={params} fetchRoutes={fetchRoutes} />
       <RouteTileContainer routes={routes} />
     </div>
   );

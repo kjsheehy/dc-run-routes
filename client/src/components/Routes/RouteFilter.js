@@ -24,7 +24,6 @@ function RouteFilter(props) {
         <label htmlFor="distance-slider">Distance</label>
         <RangeSlider
           name="distance-slider"
-          setParams={props.setParams}
           fetchRoutes={props.fetchRoutes}
           params={props.params}
         />
@@ -35,7 +34,6 @@ function RouteFilter(props) {
           params={props.params}
           paramKey="locations"
           label="Location"
-          setParams={props.setParams}
           fetchRoutes={props.fetchRoutes}
         />
       </div>
@@ -45,7 +43,6 @@ function RouteFilter(props) {
           params={props.params}
           paramKey="surfaces"
           label="Surface"
-          setParams={props.setParams}
           fetchRoutes={props.fetchRoutes}
         />
       </div>
@@ -55,7 +52,6 @@ function RouteFilter(props) {
           params={props.params}
           paramKey="types"
           label="Route Type"
-          setParams={props.setParams}
           fetchRoutes={props.fetchRoutes}
         />
       </div>
@@ -65,7 +61,6 @@ function RouteFilter(props) {
           params={props.params}
           paramKey="features"
           label="Features"
-          setParams={props.setParams}
           fetchRoutes={props.fetchRoutes}
         />
       </div>

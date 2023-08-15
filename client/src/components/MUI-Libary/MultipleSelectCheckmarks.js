@@ -30,13 +30,10 @@ export default function MultipleSelectCheckmarks(props) {
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value
     );
-
-    const newParams = {
+    props.fetchRoutes({
       ...props.params,
       [props.paramKey]: value,
-    };
-    props.setParams(newParams);
-    props.fetchRoutes(newParams);
+    });
   };
 
   return (
