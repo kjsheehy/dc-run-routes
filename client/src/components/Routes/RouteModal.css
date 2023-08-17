@@ -5,3 +5,9 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.route-modal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

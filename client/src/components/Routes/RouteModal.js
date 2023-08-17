@@ -14,12 +14,14 @@ function RouteModal(props) {
         src={props.thumbnailSrc}
         alt={props.name + ' photo'}
       />
-      <div className="route-info">
-        <div className="route-distance">{props.distance.toFixed(1)} mi</div>
-        <div className="route-location">{props.location}</div>
-        <div className="route-surface">{props.surface.join(', ')}</div>
-        <div className="route-features">{props.features.join(', ')}</div>
-        <div className="route-type">{props.type}</div>
+      <div className="route-modal-info">
+        <div className="route-modal-distance">
+          {props.distance.toFixed(1)} mi
+        </div>
+        <div className="route-modal-location">{props.location}</div>
+        <div className="route-modal-surface">{props.surface.join(', ')}</div>
+        <div className="route-modal-features">{props.features.join(', ')}</div>
+        <div className="route-modal-type">{props.type}</div>
       </div>
     </Modal>
   );
