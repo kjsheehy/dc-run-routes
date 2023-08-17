@@ -95,6 +95,14 @@ const routes = [
   },
 ];
 
+const testImages = routes.map((route) => {
+  return {
+    url: route.thumbnailSrc,
+    title: route.name,
+    index: route.id,
+  };
+});
+
 app.get('/dc-run-routes/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
@@ -111,6 +119,11 @@ app.post(`${urlBase}/routes`, (req, res) => {
       params.features.some((feature) => route.features.includes(feature))
   );
   res.send(matchingRoutes);
+});
+
+app.get(`${urlBase}/route`, (req, res) => {
+  console.log('images fetched');
+  res.send(testImages);
 });
 
 app.listen(port, () => {
