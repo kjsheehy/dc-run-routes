@@ -1,10 +1,19 @@
 .image-carousel {
-  max-height: 50vh;
-  max-width: 90vw;
+  max-width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-image {
-  max-width: 90vw;
-  max-height: 50vh;
+  max-width: 100%;
+  max-height: 40vh;
+  object-fit: fill;
 }

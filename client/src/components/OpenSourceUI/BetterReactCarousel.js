@@ -50,7 +50,9 @@ const BetterReactCarousel = () => {
 
   const carouselContent = images.map((image) => (
     <Carousel.Item>
-      <img width="100%" src={image.url} className="carousel-image" />
+      <div className="carousel-item">
+        <img src={image.url} className="carousel-image" />
+      </div>
     </Carousel.Item>
   ));
 
@@ -59,10 +61,9 @@ const BetterReactCarousel = () => {
       className="image-carousel"
       cols={1}
       rows={1}
-      gap={10}
+      gap={0}
       loop={true}
       autoplay={5000}
-      showDots={true}
       mobileBreakpoint={600}
     >
       {carouselContent}
