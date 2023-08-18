@@ -122,7 +122,7 @@ app.post(`${urlBase}/routes`, (req, res) => {
 });
 
 app.get(`${urlBase}/route`, (req, res) => {
-  console.log('images fetched');
+  console.log(testImages);
   res.send(testImages);
 });
 
