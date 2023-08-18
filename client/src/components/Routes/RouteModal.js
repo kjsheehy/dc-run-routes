@@ -1,6 +1,6 @@
 import './RouteModal.css';
 import Modal from '../UI/Modal';
-import ImageCarousel from '../OpenSourceUI/ImageCarousel';
+import BetterReactCarousel from '../OpenSourceUI/BetterReactCarousel';
 
 function RouteModal(props) {
   const thumbnailOrientation = props.thumbnailIsPortrait
@@ -15,7 +15,7 @@ function RouteModal(props) {
         src={props.thumbnailSrc}
         alt={props.name + ' photo'}
       /> */}
-      <ImageCarousel />
+      <BetterReactCarousel />
       <div className="route-modal-info">
         <div className="route-modal-distance">
           {props.distance.toFixed(1)} mi

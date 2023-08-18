@@ -1,0 +1,10 @@
+.image-carousel {
+  max-height: 50vh;
+  max-width: 90vw;
+  display: flex;
+}
+
+.carousel-image {
+  max-width: 90vw;
+  max-height: 50vh;
+}

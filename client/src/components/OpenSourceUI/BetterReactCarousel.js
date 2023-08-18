@@ -1,13 +1,8 @@
 import React from 'react';
-import Slider from 'react-touch-drag-slider';
-import { useState } from 'react';
-import './ImageCarousel.css';
+import Carousel from 'better-react-carousel';
+import './BetterReactCarousel.css';
 
-// here we are importing some images
-// but the Slider children can be an array of any element nodes, or your own components
-//import images from './images'
-
-function App() {
+const BetterReactCarousel = () => {
   const images = [
     {
       url: 'http://localhost:3006/dc-run-routes/KeyBridgeEast.jpg',
@@ -52,27 +47,27 @@ function App() {
   // }
 
   //fetchImages();
-  return (
-    <div className="image-carousel">
-      <Slider
-        onSlideComplete={(i) => {
-          console.log('finished dragging, current slide is', i);
-        }}
-        onSlideStart={(i) => {
-          console.log('started dragging on slide', i);
-        }}
-        activeIndex={0}
-        threshHold={100}
-        transition={0.5}
-        scaleOnDrag={true}
-      >
-        {images.map(({ url, title }, index) => (
-          <img src={url} key={index} alt={title} />
-        ))}
-      </Slider>
-      {/* <img src={images[0].url} /> */}
-    </div>
-  );
-}
 
-export default App;
+  const carouselContent = images.map((image) => (
+    <Carousel.Item>
+      <img width="100%" src={image.url} className="carousel-image" />
+    </Carousel.Item>
+  ));
+
+  return (
+    <Carousel
+      className="image-carousel"
+      cols={1}
+      rows={1}
+      gap={10}
+      loop={true}
+      autoplay={5000}
+      showDots={true}
+      mobileBreakpoint={600}
+    >
+      {carouselContent}
+    </Carousel>
+  );
+};
+
+export default BetterReactCarousel;
