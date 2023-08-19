@@ -1,26 +1,27 @@
 import { Carousel } from 'react-carousel-minimal';
+import { useEffect, useState } from 'react';
 
 function ReactCarousel() {
-  const images = [
-    {
-      image: 'http://localhost:3006/dc-run-routes/KeyBridgeEast.jpg',
-    },
-    {
-      image:
-        'http://localhost:3006/dc-run-routes/TeddyRooseveltInteriorLushDeer.jpeg',
-    },
-    {
-      image:
-        'http://localhost:3006/dc-run-routes/WindyRunPotomacEastSunriseFinn.jpeg',
-    },
-    {
-      image: 'http://localhost:3006/dc-run-routes/HainsPointSWSunset.jpeg',
-    },
+  const [images, setImages] = useState([
     {
       image:
         'http://localhost:3006/dc-run-routes/OldTownWaterfrontTownhouses.jpeg',
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    async function fetchPhotos() {
+      const response = await fetch(
+        `http://localhost:3006/dc-run-routes/api/route`
+      );
+      const returnedPhotos = await response.json();
+      setImages(returnedPhotos.map((photo) => ({ image: photo })));
+    }
+    fetchPhotos();
+
+    return () => {};
+  }, []);
+
   //Determine if it's a small screen for conditional styling
   const mobile = window.innerWidth <= 600;
   return (
