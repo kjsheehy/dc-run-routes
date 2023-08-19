@@ -10,7 +10,7 @@ function RouteModal(props) {
   return (
     <Modal className="route-modal" close={props.close}>
       <h2 className="route-name">{props.name}</h2>
-      <ReactCarousel thumbnailSRC={props.thumbnailSRC} />
+      <ReactCarousel thumbnailSrc={props.thumbnailSrc} />
       <div className="route-modal-info">
         <div className="route-modal-distance">
           {props.distance.toFixed(1)} mi
