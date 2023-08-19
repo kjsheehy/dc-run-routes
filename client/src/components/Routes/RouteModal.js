@@ -1,6 +1,5 @@
 import './RouteModal.css';
 import Modal from '../UI/Modal';
-import BetterReactCarousel from '../OpenSourceUI/BetterReactCarousel';
 import ReactCarousel from '../OpenSourceUI/ReactCarousel';
 
 function RouteModal(props) {
