@@ -1,11 +1,10 @@
 import { Carousel } from 'react-carousel-minimal';
 import { useEffect, useState } from 'react';
 
-function ReactCarousel() {
+function ReactCarousel(props) {
   const [images, setImages] = useState([
     {
-      image:
-        'http://localhost:3006/dc-run-routes/OldTownWaterfrontTownhouses.jpeg',
+      image: props.thumbnailSRC,
     },
   ]);
 
@@ -24,7 +23,9 @@ function ReactCarousel() {
 
   //Determine if it's a small screen for conditional styling
   const mobile = window.innerWidth <= 600;
-  return (
+  return images.length === 1 ? (
+    <img src={images[0].image} />
+  ) : (
     <Carousel
       data={images}
       time={4000}
@@ -37,10 +38,12 @@ function ReactCarousel() {
       slideBackgroundColor="white"
       slideImageFit="contain"
       thumbnails={!mobile}
-      thumbnailWidth="80px"
+      thumbnailWidth="60px"
       showNavBtn={!mobile}
       style={{
         textAlign: 'center',
+        maxWidth: '95%',
+        maxHeight: '70%',
         marginTop: '0',
         marginBottom: '0',
         display: 'flex',
