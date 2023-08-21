@@ -95,13 +95,7 @@ const routes = [
   },
 ];
 
-const testImages = routes.map((route) => {
-  return {
-    url: route.thumbnailSrc,
-    title: route.name,
-    index: route.id,
-  };
-});
+const testImages = routes.map((route) => route.thumbnailSrc);
 
 app.get('/dc-run-routes/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));

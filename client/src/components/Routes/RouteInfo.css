@@ -1,0 +1,33 @@
+.route-modal-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.route-modal-info {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  text-align: center;
+  flex: 1 1;
+  width: max-content;
+  /* border: 1px solid black; */
+}
+
+.route-info-label {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.route-info-value {
+  text-align: center;
+}
+/* 
+@media (max-width: 600px) {
+  .route-modal-info {
+    min-width: 26%;
+  }
+} */
