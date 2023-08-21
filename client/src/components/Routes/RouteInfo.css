@@ -1,7 +1,8 @@
 .route-modal-info-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 100%;
   flex-wrap: wrap;
   margin-top: 5px;
 }

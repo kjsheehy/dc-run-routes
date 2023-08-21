@@ -12,11 +12,11 @@ export default function RouteInfo(props) {
         <div className="route-info-value">{props.location}</div>
       </div>
       <div className="route-modal-info">
-        <div className="route-info-label">Surface(s)</div>
+        <div className="route-info-label">Surface</div>
         <div className="route-info-value">{props.surface.join(', ')}</div>
       </div>
       <div className="route-modal-info">
-        <div className="route-info-label">Feature(s)</div>
+        <div className="route-info-label">Features</div>
         <div className="route-info-value">{props.features.join(', ')}</div>
       </div>
     </div>
