@@ -1,12 +1,18 @@
 import './Modal.css';
 
 function Modal(props) {
+  document.body.style.overflow = 'hidden';
+  function closeModal() {
+    document.body.style.overflow = 'auto';
+    props.close();
+  }
+
   return (
     <div>
       <div className={'modal'}>
         <div className="modal-header">
           <h3 className="modal-title">{props.title}</h3>
-          <div className="close" onClick={props.close}>
+          <div className="close" onClick={closeModal}>
             &times;
           </div>
         </div>
@@ -14,7 +20,7 @@ function Modal(props) {
           {props.children}
         </div>
       </div>
-      <div className="overlay" onClick={props.close}></div>
+      <div className="overlay" onClick={closeModal}></div>
     </div>
   );
 }
