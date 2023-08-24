@@ -35,15 +35,9 @@ function ReactCarousel(props) {
     marginBottom: '10px',
   };
 
-  const divStyle = {
-    width: '600px',
-    height: '400px',
-    top: '0',
-  };
-
   const imageOrCarousel =
     images.length === 1 ? (
-      <img src={images[0].image} style={carouselStyle} />
+      <img src={images[0].image} style={carouselStyle} alt="Route" />
     ) : (
       <Carousel
         data={images}
