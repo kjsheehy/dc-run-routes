@@ -1,8 +1,13 @@
 .route-modal {
   margin: 1%;
-  padding-top: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 600px) {
+  .route-modal {
+    padding-top: calc(1020px - 100vh);
+  }
 }

@@ -26,46 +26,43 @@ function ReactCarousel(props) {
   const mobile = window.innerWidth <= 600;
 
   const carouselStyle = {
-    textAlign: 'center',
-    maxWidth: '95%',
+    maxWidth: '100%',
     maxHeight: '70%',
-    marginTop: '0',
-    marginBottom: '0',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  };
-
-  const singleImageStyle = {
-    height: '400px',
-    width: '600px',
-    maxWidth: '95%',
-    maxHeight: '70%',
-    marginTop: '0',
-    marginBottom: '0',
     objectFit: 'contain',
   };
 
-  return images.length === 1 ? (
-    <img src={images[0].image} style={singleImageStyle} />
-  ) : (
-    <Carousel
-      data={images}
-      time={4000}
-      width="600px"
-      height="400px"
-      radius="0px"
-      slideNumber={false}
-      automatic={false}
-      dots={mobile}
-      slideBackgroundColor="white"
-      slideImageFit="contain"
-      thumbnails={!mobile}
-      thumbnailWidth="60px"
-      showNavBtn={!mobile}
-      style={carouselStyle}
-    />
-  );
+  const divStyle = {
+    width: '600px',
+    height: '400px',
+    top: '0',
+  };
+
+  const imageOrCarousel =
+    images.length === 1 ? (
+      <img src={images[0].image} style={carouselStyle} />
+    ) : (
+      <Carousel
+        data={images}
+        time={4000}
+        width="600px"
+        height="400px"
+        radius="0px"
+        slideNumber={false}
+        automatic={false}
+        dots={mobile}
+        slideBackgroundColor="white"
+        slideImageFit="contain"
+        thumbnails={!mobile}
+        thumbnailWidth="60px"
+        showNavBtn={!mobile}
+        style={carouselStyle}
+      />
+    );
+
+  return imageOrCarousel;
 }
 
 export default ReactCarousel;
