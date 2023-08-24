@@ -32,6 +32,7 @@ function ReactCarousel(props) {
     flexDirection: 'column',
     alignItems: 'center',
     objectFit: 'contain',
+    marginBottom: '10px',
   };
 
   const divStyle = {

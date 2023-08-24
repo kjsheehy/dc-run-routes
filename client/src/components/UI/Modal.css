@@ -44,10 +44,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 11;
-  margin-right: 5px;
-  height: 5rem;
-  font-size: x-large;
+  margin-right: 10px;
+  font-size: xx-large;
 }
 
 @media screen and (max-width: 600px) {

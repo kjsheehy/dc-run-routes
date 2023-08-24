@@ -1,9 +1,19 @@
 .route-modal {
-  margin: 1%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.route-description {
+  text-indent: 2rem;
+}
+
+.route-map {
+  width: 100%;
+  margin: 1rem;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 600px) {

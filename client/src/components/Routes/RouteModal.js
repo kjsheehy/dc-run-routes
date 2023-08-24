@@ -16,7 +16,10 @@ function RouteModal(props) {
       <ReactCarousel thumbnailSrc={props.thumbnailSrc} />
       <RouteInfo {...props} />
       <p className="route-description">{props.description}</p>
-      <img src="http://localhost:3006/dc-run-routes/test-route-map.png" />
+      <img
+        className="route-map"
+        src="http://localhost:3006/dc-run-routes/test-route-map.png"
+      />
       <RouteLinks {...props} />
     </Modal>
   );
