@@ -1,26 +1,23 @@
 import './RouteModal.css';
 import Modal from '../UI/Modal';
+import ReactCarousel from '../OpenSourceUI/ReactCarousel';
+import RouteInfo from './RouteInfo';
+import RouteLinks from './RouteLinks';
 
 function RouteModal(props) {
-  const thumbnailOrientation = props.thumbnailIsPortrait
-    ? 'portrait'
-    : 'landscape';
-
   return (
-    <Modal className="route-modal" close={props.close}>
-      <h2 className="route-name">{props.name}</h2>
+    <Modal className="route-modal" close={props.close} title={props.name}>
+      <ReactCarousel thumbnailSrc={props.thumbnailSrc} />
+      <RouteInfo {...props} />
+      <p className="route-description">{props.description}</p>
       <img
-        className={'route-thumbnail ' + thumbnailOrientation}
-        src={props.thumbnailSrc}
-        alt={props.name + ' photo'}
+        className="route-map"
+        // Local: "http://localhost:3006/dc-run-routes/test-route-map.png"
+        // Deployed: "./test-route-map.png"
+        src="./test-route-map.png"
+        alt="Route Map"
       />
-      <div className="route-info">
-        <div className="route-distance">{props.distance.toFixed(1)} mi</div>
-        <div className="route-location">{props.location}</div>
-        <div className="route-surface">{props.surface.join(', ')}</div>
-        <div className="route-features">{props.features.join(', ')}</div>
-        <div className="route-type">{props.type}</div>
-      </div>
+      <RouteLinks {...props} />
     </Modal>
   );
 }

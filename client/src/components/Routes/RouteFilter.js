@@ -1,6 +1,6 @@
 import './RouteFilter.css';
-import RangeSlider from '../MUI-Libary/RangeSlider';
-import MultipleSelectCheckmarks from '../MUI-Libary/MultipleSelectCheckmarks';
+import RangeSlider from '../OpenSourceUI/RangeSlider';
+import MultipleSelectCheckmarks from '../OpenSourceUI/MultipleSelectCheckmarks';
 
 function RouteFilter(props) {
   const locations = [

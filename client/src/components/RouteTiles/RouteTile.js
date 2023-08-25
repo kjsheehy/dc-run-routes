@@ -9,6 +9,8 @@ function RouteTile(props) {
   const [selected, setSelected] = useState();
 
   function clickHandler() {
+    document.body.style.position = 'fixed';
+    document.body.style.top = 
     if (!selected) setSelected(true);
   }
 

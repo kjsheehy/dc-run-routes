@@ -1,0 +1,29 @@
+.route-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.route-links a {
+  text-align: center;
+  margin: 10px;
+}
+
+.route-apps {
+  display: flex;
+  width: 100%;
+  margin: 15px 0 10px 0;
+}
+
+.route-apps a {
+  margin: 0;
+  flex: 1 1 0px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .route-apps a {
+    width: 30%;
+  }
+}
