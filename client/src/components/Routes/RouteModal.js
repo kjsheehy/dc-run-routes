@@ -12,7 +12,9 @@ function RouteModal(props) {
       <p className="route-description">{props.description}</p>
       <img
         className="route-map"
-        src="http://localhost:3006/dc-run-routes/test-route-map.png"
+        // Local: "http://localhost:3006/dc-run-routes/test-route-map.png"
+        // Deployed: "./test-route-map.png"
+        src="./test-route-map.png"
         alt="Route Map"
       />
       <RouteLinks {...props} />
