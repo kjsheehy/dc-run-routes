@@ -12,7 +12,9 @@ function ReactCarousel(props) {
   useEffect(() => {
     async function fetchPhotos() {
       const response = await fetch(
-        `http://localhost:3006/dc-run-routes/api/route`
+        //Local: 'http://localhost:3006/dc-run-routes/api/route'
+        //Deployed: './api/route'
+        './api/route'
       );
       const returnedPhotos = await response.json();
       setImages(returnedPhotos.map((photo) => ({ image: photo })));

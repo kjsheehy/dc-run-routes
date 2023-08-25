@@ -24,9 +24,9 @@ function RouteFinder(props) {
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
     const response = await fetch(
-      //In development: `http://localhost:3006/dc-run-routes/api/routes`
-      // In prod: `./api/routes`
-      `http://localhost:3006/dc-run-routes/api/routes`,
+      // Local: `http://localhost:3006/dc-run-routes/api/routes`
+      // Deployed: `./api/routes`
+      `./api/routes`,
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },

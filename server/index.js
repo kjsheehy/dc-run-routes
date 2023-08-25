@@ -20,9 +20,9 @@ app.use(
 
 const urlBase = '/dc-run-routes/api';
 
-// In local dev: 'http://localhost:3006/dc-run-routes'
-// In prod: '.'
-const assetURLBase = 'http://localhost:3006/dc-run-routes';
+// Local: 'http://localhost:3006/dc-run-routes'
+// Deployed: '.'
+const assetURLBase = '.';
 
 const routes = [
   {
@@ -128,7 +128,6 @@ app.post(`${urlBase}/routes`, (req, res) => {
 });
 
 app.get(`${urlBase}/route`, (req, res) => {
-  console.log(testImages);
   res.send(testImages);
 });
 
