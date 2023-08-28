@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 const port = 3006;
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const { match } = require('assert');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -181,9 +182,9 @@ app.post(`${urlBase}/routes`, (req, res) => {
 
 app.get(`${urlBase}/route/:id`, (req, res) => {
   console.log(req.params.id);
-  // const photos = routes.find((route) => route.id === req.params.id).photos;
-  const photos = false;
-  res.send(photos || testImages);
+  const match = routes.find((route) => route.id == req.params.id);
+
+  res.send(match && match.photos ? match.photos : testImages);
 });
 
 app.listen(port, () => {
