@@ -10,7 +10,7 @@ function ReactCarousel(props) {
 
   useEffect(() => {
     async function fetchPhotos() {
-      const response = await fetch(`/api/route/${props.id}`);
+      const response = await fetch(`./api/route/${props.id}`);
       const returnedPhotos = await response.json();
       console.log(returnedPhotos);
       setImages(returnedPhotos.map((photo) => ({ image: photo })));

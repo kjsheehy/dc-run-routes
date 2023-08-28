@@ -58,10 +58,10 @@ const routes = [
   {
     id: 0,
     name: 'Georgetown Waterfront Bridges',
-    thumbnailSrc: `/KeyBridgeEast.jpg`,
+    thumbnailSrc: `./KeyBridgeEast.jpg`,
     thumbnailIsPortrait: false,
     photos: [
-      `/KeyBridgeSunrise.jpeg`,
+      `./KeyBridgeSunrise.jpeg`,
       './GeorgetownWaterfrontParkPath.jpeg',
       './RooseveltBridgeRosslyn.jpeg',
       './TheReach.jpeg',
@@ -81,7 +81,7 @@ const routes = [
   {
     id: 1,
     name: 'Teddy Roosevelt Island',
-    thumbnailSrc: `/TeddyRooseveltInteriorLushDeer.jpeg`,
+    thumbnailSrc: `./TeddyRooseveltInteriorLushDeer.jpeg`,
     distance: 2.0,
     extendable: false,
     location: 'N Arlington',
@@ -94,7 +94,7 @@ const routes = [
   {
     id: 2,
     name: 'Windy Run',
-    thumbnailSrc: `/WindyRunPotomacEastSunriseFinn.jpeg`,
+    thumbnailSrc: `./WindyRunPotomacEastSunriseFinn.jpeg`,
     distance: 1.5,
     extendable: true,
     location: 'N Arlington',
@@ -107,7 +107,7 @@ const routes = [
   {
     id: 3,
     name: 'Hains Point',
-    thumbnailSrc: `/HainsPointSWSunset.jpeg`,
+    thumbnailSrc: `./HainsPointSWSunset.jpeg`,
     distance: 2.9,
     extendable: false,
     location: 'SW D.C.',
@@ -120,7 +120,7 @@ const routes = [
   {
     id: 4,
     name: 'National Arboretum',
-    thumbnailSrc: `/ArboretumCreek.jpeg`,
+    thumbnailSrc: `./ArboretumCreek.jpeg`,
     thumbnailIsPortrait: true,
     distance: 3.0,
     extendable: true,
@@ -134,7 +134,7 @@ const routes = [
   {
     id: 5,
     name: 'Old Town Waterfront',
-    thumbnailSrc: `/OldTownWaterfrontTownhouses.jpeg`,
+    thumbnailSrc: `./OldTownWaterfrontTownhouses.jpeg`,
     distance: 1.0,
     extendable: true,
     location: 'Alexandria',
@@ -147,7 +147,7 @@ const routes = [
   {
     id: 6,
     name: 'Key + Memorial Bridges Loop',
-    thumbnailSrc: `/KeyBridgeEast.jpg`,
+    thumbnailSrc: `./KeyBridgeEast.jpg`,
     distance: 4.4,
     extendable: true,
     location: 'N Arlington',

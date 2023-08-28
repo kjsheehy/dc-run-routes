@@ -23,7 +23,7 @@ function RouteFinder(props) {
 
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
-    const response = await fetch(`/api/routes`, {
+    const response = await fetch(`./api/routes`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newParams),

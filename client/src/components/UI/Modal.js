@@ -7,6 +7,8 @@ function Modal(props) {
     props.close();
   }
 
+  console.log(props);
+
   return (
     <div>
       <div className={'modal'}>
