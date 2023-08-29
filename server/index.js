@@ -229,13 +229,6 @@ app.post(`${urlBase}/routes`, (req, res) => {
   res.send(matchingRoutes);
 });
 
-app.get(`${urlBase}/route/:id`, (req, res) => {
-  console.log(req.params.id);
-  const match = routes.find((route) => route.id == req.params.id);
-
-  res.send(match && match.photos ? match.photos : testImages);
-});
-
 app.listen(port, () => {
   console.log(`Server listening on port ${port}...`);
 });
