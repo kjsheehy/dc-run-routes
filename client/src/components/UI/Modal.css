@@ -21,6 +21,7 @@
 
 .modal-title {
   margin: 10px 0 5px 0;
+  z-index: 20;
 }
 
 .modal-content {

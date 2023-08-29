@@ -7,16 +7,10 @@ import RouteLinks from './RouteLinks';
 function RouteModal(props) {
   return (
     <Modal className="route-modal" close={props.close} title={props.name}>
-      <ReactCarousel thumbnailSrc={props.thumbnailSrc} />
+      <ReactCarousel thumbnailSrc={props.thumbnailSrc} id={props.id} />
       <RouteInfo {...props} />
       <p className="route-description">{props.description}</p>
-      <img
-        className="route-map"
-        // Local: "http://localhost:3006/dc-run-routes/test-route-map.png"
-        // Deployed: "./test-route-map.png"
-        src="./test-route-map.png"
-        alt="Route Map"
-      />
+      <img className="route-map" src="./test-route-map.png" alt="Route Map" />
       <RouteLinks {...props} />
     </Modal>
   );

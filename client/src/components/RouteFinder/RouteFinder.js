@@ -23,16 +23,11 @@ function RouteFinder(props) {
 
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
-    const response = await fetch(
-      // Local: `http://localhost:3006/dc-run-routes/api/routes`
-      // Deployed: `./api/routes`
-      `./api/routes`,
-      {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(newParams),
-      }
-    );
+    const response = await fetch(`./api/routes`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newParams),
+    });
     const returnedRoutes = await response.json();
     if (routes !== returnedRoutes) setRoutes(returnedRoutes);
   }
