@@ -204,19 +204,25 @@ app.get(`/dc-run-routes/`, (req, res) => {
 });
 
 app.post(`${urlBase}/routes`, async (req, res) => {
-  const params = req.body;
-  const routesFromDB = await queryDB().catch(console.dir);
-  console.log(routesFromDB);
-  const matchingRoutes = routes.filter(
-    (route) =>
-      route.distance >= params.distance[0] &&
-      route.distance <= params.distance[1] &&
-      params.locations.includes(route.location) &&
-      params.surfaces.some((surface) => route.surface.includes(surface)) &&
-      params.types.some((type) => route.type.includes(type)) &&
-      params.features.some((feature) => route.features.includes(feature))
-  );
-  res.send(matchingRoutes);
+  try {
+    const params = req.body;
+    const routesFromDB = await queryDB().catch(console.dir);
+    console.log(routesFromDB[0]);
+    console.log(Array.isArray(routesFromDB));
+    const matchingRoutes = routesFromDB.filter(
+      (route) =>
+        route.distance >= params.distance[0] &&
+        route.distance <= params.distance[1] &&
+        params.locations.includes(route.location) &&
+        params.surfaces.some((surface) => route.surface.includes(surface)) &&
+        params.types.some((type) => route.type.includes(type)) &&
+        params.features.some((feature) => route.features.includes(feature))
+    );
+    res.send(matchingRoutes);
+  } catch (err) {
+    console.log(err);
+    res.status(404).send(err);
+  }
 });
 
 app.listen(port, () => {

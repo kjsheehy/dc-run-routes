@@ -19,7 +19,7 @@ function RouteFinder(props) {
     features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
   });
 
-  const [routes, setRoutes] = useState(false);
+  const [routes, setRoutes] = useState([]);
 
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
@@ -28,8 +28,14 @@ function RouteFinder(props) {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newParams),
     });
+    console.log(response.status);
+    // if (response.status > 400) {
+    //   console.log('Error while fetching routes:');
+    //   console.dir(response);
+    // } else {
     const returnedRoutes = await response.json();
     if (routes !== returnedRoutes) setRoutes(returnedRoutes);
+    //}
   }
 
   //Fetch routes only on initial render. Subsequent fetches will be called by the filter components on each change in their values.
