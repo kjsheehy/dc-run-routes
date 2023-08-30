@@ -18,13 +18,8 @@
   width: 95%;
 }
 
-.route-thumbnail.landscape {
+.route-thumbnail {
   max-width: 100%;
-  height: auto;
-}
-
-.route-thumbnail.portrait {
-  max-width: 56%;
   height: auto;
 }
 

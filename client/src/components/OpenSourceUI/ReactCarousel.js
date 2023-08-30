@@ -1,24 +1,7 @@
 import { Carousel } from 'react-carousel-minimal';
-import { useEffect, useState } from 'react';
 
 function ReactCarousel(props) {
-  const [images, setImages] = useState([
-    {
-      image: props.thumbnailSrc,
-    },
-  ]);
-
-  useEffect(() => {
-    async function fetchPhotos() {
-      const response = await fetch(`./api/route/${props.id}`);
-      const returnedPhotos = await response.json();
-      console.log(returnedPhotos);
-      setImages(returnedPhotos.map((photo) => ({ image: photo })));
-    }
-    fetchPhotos();
-
-    return () => {};
-  }, []);
+  const images = props.photos.map((photoSrc) => ({ image: photoSrc }));
 
   //Determine if it's a small screen for conditional styling
   const mobile = window.innerWidth <= 600;

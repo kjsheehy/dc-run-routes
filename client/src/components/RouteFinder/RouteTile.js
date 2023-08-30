@@ -3,9 +3,6 @@ import RouteModal from '../Routes/RouteModal';
 import { useState } from 'react';
 
 function RouteTile(props) {
-  const thumbnailOrientation = props.thumbnailIsPortrait
-    ? 'portrait'
-    : 'landscape';
   const [selected, setSelected] = useState();
 
   function clickHandler() {
@@ -21,8 +18,8 @@ function RouteTile(props) {
       {selected && <RouteModal {...props} close={closeRouteModal} />}
       <h2 className="route-name">{props.name}</h2>
       <img
-        className={'route-thumbnail ' + thumbnailOrientation}
-        src={props.thumbnailSrc}
+        className={'route-thumbnail'}
+        src={props.photos[0]}
         alt={props.name + ' photo'}
       />
       <div className="route-info">

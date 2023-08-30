@@ -6,6 +6,7 @@ const app = express();
 const port = 3006;
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const { match } = require('assert');
+const { create } = require('domain');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,38 +21,30 @@ app.use(
   express.static(path.join(__dirname, '..', 'client', 'build'))
 );
 
-// const mongoUri =
-//   'mongodb+srv://kjsheehy:Punch93Seventeen@dc-run-routes.jp0qhli.mongodb.net/?retryWrites=true&w=majority';
+const mongoUri =
+  'mongodb+srv://kjsheehy:Punch93Seventeen@dc-run-routes.jp0qhli.mongodb.net/?retryWrites=true&w=majority';
 
-// const mongoClient = new MongoClient(mongoUri, {
-//   serverApi: {
-//     version: ServerApiVersion.v1,
-//     strict: true,
-//     deprecationErrors: true,
-//   },
-// });
+const mongoClient = new MongoClient(mongoUri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
-// async function runMongo() {
-//   try {
-//     await mongoClient.connect();
-//     await mongoClient.db('dc-run-routes').command({ ping: 1 });
-//     console.log('Pinged your deployment. Successfully connected to MongoDB!');
-//   } finally {
-//     await mongoClient.close();
-//   }
-// }
-// runMongo().catch(console.dir);
-
-// // const result = await db.collection('routes').insertMany(routes);
-// //db.collection('routes').insertMany(routes);
-
-// async function createRoutes(newRoutes) {
-//   const result = await mongoClient
-//     .db('dc-run-routes')
-//     .collection('routes')
-//     .insertMany(newRoutes);
-//   console.log(`${result.insertedCount} new listings created`);
-// }
+async function queryDB(params) {
+  try {
+    await mongoClient.connect();
+    const result = await mongoClient
+      .db('dc-run-routes')
+      .collection('routes')
+      .find(params)
+      .toArray();
+    return result;
+  } catch (err) {
+    console.log('Mongoose Connection error', err);
+  }
+}
 
 const urlBase = '/dc-run-routes/api';
 
@@ -59,9 +52,8 @@ const routes = [
   {
     id: 0,
     name: 'Georgetown Waterfront Bridges',
-    thumbnailSrc: `./KeyBridgeEast.jpg`,
-    thumbnailIsPortrait: false,
     photos: [
+      `./KeyBridgeEast.jpg`,
       `./KeyBridgeSunrise.jpeg`,
       './GeorgetownWaterfrontParkPath.jpeg',
       './RooseveltBridgeRosslyn.jpeg',
@@ -71,7 +63,6 @@ const routes = [
       './RockCreekTrailRosslyn.jpeg',
     ],
     distance: 3.4,
-    extendable: false,
     location: 'N Arlington',
     surface: ['Paved Path', 'Sidewalk'],
     features: ['Flat'],
@@ -82,25 +73,39 @@ const routes = [
   {
     id: 1,
     name: 'Teddy Roosevelt Island',
-    thumbnailSrc: `./TeddyRooseveltInteriorLushDeer.jpeg`,
     distance: 2.0,
-    extendable: false,
     location: 'N Arlington',
     surface: ['Trail', 'Boardwalk'],
     features: ['Flat'],
     type: 'Loop',
+    photos: [
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './KeyBridgeEast.jpg',
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './HainsPointSWSunset.jpeg',
+      './ArboretumPillars.jpeg',
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: 2,
     name: 'Windy Run',
-    thumbnailSrc: `./WindyRunPotomacEastSunriseFinn.jpeg`,
     distance: 1.5,
-    extendable: true,
     location: 'N Arlington',
     surface: ['Trail'],
     features: ['Rocky'],
+    photos: [
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './KeyBridgeEast.jpg',
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './HainsPointSWSunset.jpeg',
+      './ArboretumPillars.jpeg',
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     type: 'Out & Back',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -110,7 +115,15 @@ const routes = [
     name: 'Hains Point',
     thumbnailSrc: `./HainsPointSWSunset.jpeg`,
     distance: 2.9,
-    extendable: false,
+    photos: [
+      './HainsPointSWSunset.jpeg',
+      './KeyBridgeEast.jpg',
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './ArboretumPillars.jpeg',
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     location: 'SW D.C.',
     surface: ['Road', 'Sidewalk'],
     features: ['Flat'],
@@ -121,12 +134,18 @@ const routes = [
   {
     id: 4,
     name: 'National Arboretum',
-    thumbnailSrc: `./ArboretumCreek.jpeg`,
-    thumbnailIsPortrait: true,
     distance: 3.0,
-    extendable: true,
     location: 'NE D.C.',
     surface: ['Road'],
+    photos: [
+      './ArboretumPillars.jpeg',
+      './KeyBridgeEast.jpg',
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './HainsPointSWSunset.jpeg',
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     features: ['Big Hills'],
     type: 'Loop',
     description:
@@ -137,10 +156,18 @@ const routes = [
     name: 'Old Town Waterfront',
     thumbnailSrc: `./OldTownWaterfrontTownhouses.jpeg`,
     distance: 1.0,
-    extendable: true,
     location: 'Alexandria',
     surface: ['Paved Path'],
     features: ['Flat'],
+    photos: [
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './HainsPointSWSunset.jpeg',
+      './ArboretumPillars.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     type: 'Out & Back',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -148,9 +175,16 @@ const routes = [
   {
     id: 6,
     name: 'Key + Memorial Bridges Loop',
-    thumbnailSrc: `./KeyBridgeEast.jpg`,
     distance: 4.4,
-    extendable: true,
+    photos: [
+      './KeyBridgeSunrise.jpeg',
+      './TeddyRooseveltInteriorLushDeer.jpeg',
+      './WindyRunPotomacEastSunriseFinn.jpeg',
+      './HainsPointSWSunset.jpeg',
+      './ArboretumPillars.jpeg',
+      './OldTownWaterfrontTownhouses.jpeg',
+      './KeyBridgeEast.jpg',
+    ],
     location: 'N Arlington',
     surface: ['Paved Path', 'Sidewalk'],
     features: ['Flat'],
@@ -160,31 +194,34 @@ const routes = [
   },
 ];
 
-const testImages = routes.map((route) => route.thumbnailSrc);
+//runMongo().catch(console.dir);
+//queryDB().catch(console.dir);
 
 app.get(`/dc-run-routes/`, (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-app.post(`${urlBase}/routes`, (req, res) => {
-  const params = req.body;
-  const matchingRoutes = routes.filter(
-    (route) =>
-      route.distance >= params.distance[0] &&
-      route.distance <= params.distance[1] &&
-      params.locations.includes(route.location) &&
-      params.surfaces.some((surface) => route.surface.includes(surface)) &&
-      params.types.some((type) => route.type.includes(type)) &&
-      params.features.some((feature) => route.features.includes(feature))
-  );
-  res.send(matchingRoutes);
-});
+app.post(`${urlBase}/routes`, async (req, res) => {
+  try {
+    const params = req.body;
+    const query = {
+      distance: { $gte: params.distance[0], $lte: params.distance[1] },
+      location: { $in: params.locations },
+      surface: { $elemMatch: { $in: params.surfaces } },
+      type: { $in: params.types },
+      features: { $elemMatch: { $in: params.features } },
+    };
 
-app.get(`${urlBase}/route/:id`, (req, res) => {
-  console.log(req.params.id);
-  const match = routes.find((route) => route.id == req.params.id);
+    const routesFromDB = await queryDB(query);
 
-  res.send(match && match.photos ? match.photos : testImages);
+    res.send(routesFromDB);
+  } catch (err) {
+    console.log(
+      'error connecting to mongodb or with submitted parameters',
+      err
+    );
+    res.status(404).send(err);
+  }
 });
 
 app.listen(port, () => {
