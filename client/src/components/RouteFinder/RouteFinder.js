@@ -29,13 +29,13 @@ function RouteFinder(props) {
       body: JSON.stringify(newParams),
     });
     console.log(response.status);
-    // if (response.status > 400) {
-    //   console.log('Error while fetching routes:');
-    //   console.dir(response);
-    // } else {
-    const returnedRoutes = await response.json();
-    if (routes !== returnedRoutes) setRoutes(returnedRoutes);
-    //}
+    if (response.status >= 400) {
+      console.log('Error while fetching routes:');
+      console.dir(response);
+    } else {
+      const returnedRoutes = await response.json();
+      if (routes !== returnedRoutes) setRoutes(returnedRoutes);
+    }
   }
 
   //Fetch routes only on initial render. Subsequent fetches will be called by the filter components on each change in their values.

@@ -204,19 +204,22 @@ app.get(`/dc-run-routes/`, (req, res) => {
 app.post(`${urlBase}/routes`, async (req, res) => {
   try {
     const params = req.body;
-    const routesFromDB = await queryDB();
-    const matchingRoutes = routesFromDB.filter(
-      (route) =>
-        route.distance >= params.distance[0] &&
-        route.distance <= params.distance[1] &&
-        params.locations.includes(route.location) &&
-        params.surfaces.some((surface) => route.surface.includes(surface)) &&
-        params.types.some((type) => route.type.includes(type)) &&
-        params.features.some((feature) => route.features.includes(feature))
-    );
-    res.send(matchingRoutes);
+    const query = {
+      distance: { $gte: params.distance[0], $lte: params.distance[1] },
+      location: { $in: params.locations },
+      surface: { $elemMatch: { $in: params.surfaces } },
+      type: { $in: params.types },
+      features: { $elemMatch: { $in: params.features } },
+    };
+
+    const routesFromDB = await queryDB(query);
+
+    res.send(routesFromDB);
   } catch (err) {
-    console.log('error connecting to mongodb or with submitted paramters', err);
+    console.log(
+      'error connecting to mongodb or with submitted parameters',
+      err
+    );
     res.status(404).send(err);
   }
 });
