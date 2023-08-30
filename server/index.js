@@ -6,6 +6,7 @@ const app = express();
 const port = 3006;
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const { match } = require('assert');
+const { create } = require('domain');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,27 +32,21 @@ const mongoClient = new MongoClient(mongoUri, {
   },
 });
 
-async function runMongo() {
+async function queryDB(params) {
   try {
     await mongoClient.connect();
-    await mongoClient.db('dc-run-routes').command({ ping: 1 });
-    console.log('Pinged your deployment. Successfully connected to MongoDB!');
+    const result = await mongoClient
+      .db('dc-run-routes')
+      .collection('routes')
+      .find(params)
+      .toArray();
+    return result;
   } finally {
     await mongoClient.close();
   }
 }
-runMongo().catch(console.dir);
 
-// const result = await db.collection('routes').insertMany(routes);
-//db.collection('routes').insertMany(routes);
-
-async function createRoutes(newRoutes) {
-  const result = await mongoClient
-    .db('dc-run-routes')
-    .collection('routes')
-    .insertMany(newRoutes);
-  console.log(`${result.insertedCount} new listings created`);
-}
+queryDB().catch(console.dir);
 
 const urlBase = '/dc-run-routes/api';
 
@@ -201,22 +196,17 @@ const routes = [
   },
 ];
 
-const testImages = [
-  './KeyBridgeEast.jpg',
-  './TeddyRooseveltInteriorLushDeer.jpeg',
-  './WindyRunPotomacEastSunriseFinn.jpeg',
-  './HainsPointSWSunset.jpeg',
-  './ArboretumPillars.jpeg',
-  './OldTownWaterfrontTownhouses.jpeg',
-  './KeyBridgeEast.jpg',
-];
+//runMongo().catch(console.dir);
+//queryDB().catch(console.dir);
 
 app.get(`/dc-run-routes/`, (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-app.post(`${urlBase}/routes`, (req, res) => {
+app.post(`${urlBase}/routes`, async (req, res) => {
   const params = req.body;
+  const routesFromDB = await queryDB().catch(console.dir);
+  console.log(routesFromDB);
   const matchingRoutes = routes.filter(
     (route) =>
       route.distance >= params.distance[0] &&
