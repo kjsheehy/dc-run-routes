@@ -41,12 +41,10 @@ async function queryDB(params) {
       .find(params)
       .toArray();
     return result;
-  } finally {
-    await mongoClient.close();
+  } catch (err) {
+    console.log('Mongoose Connection error', err);
   }
 }
-
-queryDB().catch(console.dir);
 
 const urlBase = '/dc-run-routes/api';
 
@@ -206,9 +204,7 @@ app.get(`/dc-run-routes/`, (req, res) => {
 app.post(`${urlBase}/routes`, async (req, res) => {
   try {
     const params = req.body;
-    const routesFromDB = await queryDB().catch(console.dir);
-    console.log(routesFromDB[0]);
-    console.log(Array.isArray(routesFromDB));
+    const routesFromDB = await queryDB();
     const matchingRoutes = routesFromDB.filter(
       (route) =>
         route.distance >= params.distance[0] &&
@@ -220,7 +216,7 @@ app.post(`${urlBase}/routes`, async (req, res) => {
     );
     res.send(matchingRoutes);
   } catch (err) {
-    console.log(err);
+    console.log('error connecting to mongodb or with submitted paramters', err);
     res.status(404).send(err);
   }
 });

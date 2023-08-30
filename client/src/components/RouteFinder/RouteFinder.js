@@ -19,7 +19,7 @@ function RouteFinder(props) {
     features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
   });
 
-  const [routes, setRoutes] = useState([]);
+  const [routes, setRoutes] = useState(false);
 
   async function fetchRoutes(newParams) {
     if (params !== newParams) setParams(newParams);
