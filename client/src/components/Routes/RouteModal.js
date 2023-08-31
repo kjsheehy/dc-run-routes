@@ -11,7 +11,7 @@ function RouteModal(props) {
       <RouteInfo {...props} />
       <p className="route-description">{props.description}</p>
       <img className="route-map" src="./test-route-map.png" alt="Route Map" />
-      <RouteLinks {...props} />
+      <RouteLinks {...props.links} />
     </Modal>
   );
 }
