@@ -28,8 +28,8 @@ function RouteTile(props) {
         </div>
         <div className="route-tile-location">{props.location}</div>
         <div className="route-tile-surface">{props.surface.join(', ')}</div>
-        <div className="route-tile-features">{props.features.join(', ')}</div>
-        <div className="route-tile-type">{props.type}</div>
+        {/* <div className="route-tile-features">{props.features.join(', ')}</div>
+        <div className="route-tile-type">{props.type}</div> */}
       </div>
     </div>
   );
