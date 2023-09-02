@@ -3,8 +3,7 @@
   border-color: black;
   border-style: solid;
   width: 30%;
-  margin: 1%;
-
+  margin: 1% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +34,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .route-tile {
+    width: 49%;
+  }
+
   .route-name {
     font-size: 0.75em;
   }

@@ -1,5 +1,5 @@
 import './RouteTile.css';
-import RouteModal from '../Routes/RouteModal';
+import RouteModal from '../RouteModal/RouteModal';
 import { useState } from 'react';
 
 function RouteTile(props) {
