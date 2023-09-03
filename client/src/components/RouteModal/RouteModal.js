@@ -10,8 +10,8 @@ function RouteModal(props) {
       <ReactCarousel photos={props.photos} id={props.id} />
       <RouteInfo {...props} />
       <p className="route-description">{props.description}</p>
-      <img className="route-map" src="./test-route-map.png" alt="Route Map" />
-      <RouteLinks {...props} />
+      <img className="route-map" src={props.routeMap} alt="Route Map" />
+      <RouteLinks {...props.links} />
     </Modal>
   );
 }

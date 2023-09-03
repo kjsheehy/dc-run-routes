@@ -1,5 +1,5 @@
 import RouteTileContainer from './RouteTileContainer';
-import RouteFilter from '../Routes/RouteFilter';
+import RouteFilter from './RouteFilter';
 import { useState } from 'react';
 import './RouteFinder.css';
 
