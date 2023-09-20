@@ -30,6 +30,8 @@ const mongoClient = new MongoClient(process.env.MONGO_URI, {
   },
 });
 
+console.log(process.env);
+
 async function queryDB(params) {
   try {
     await mongoClient.connect();
