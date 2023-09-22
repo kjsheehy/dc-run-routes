@@ -27,7 +27,7 @@ require('dotenv').config();
 
 const routeData = {
   id: 0,
-  name: 'Teddy Roosevelt Island',
+  name: 'Windy Run to Teddy Roosevelt',
   distance: 0,
   location: '',
   surface: [''],
@@ -89,16 +89,16 @@ function resizePhotos(routeData, width) {
 const finalRouteData = resizePhotos(routeData, 533);
 console.log(finalRouteData);
 
-const mongoURI =
-  'mongodb+srv://kjsheehy:Ghost92hero@dc-run-routes.jp0qhli.mongodb.net/?retryWrites=true&w=majority';
+// const mongoURI =
+//   'mongodb+srv://kjsheehy:Ghost92hero@dc-run-routes.jp0qhli.mongodb.net/?retryWrites=true&w=majority';
 
-const mongoClient = new MongoClient(mongoURI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+// const mongoClient = new MongoClient(mongoURI, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   },
+// });
 
 async function insertRoute(route) {
   try {
@@ -113,7 +113,7 @@ async function insertRoute(route) {
   }
 }
 
-insertRoute(finalRouteData);
+//insertRoute(finalRouteData);
 
 //Template for route creation:
 
