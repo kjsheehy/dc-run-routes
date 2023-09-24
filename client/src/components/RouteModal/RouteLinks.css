@@ -1,31 +1,23 @@
 .route-links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
+  margin: 0;
+  align-items: space-between;
 }
 
-.route-links a {
-  text-align: center;
-  margin: 5px;
-}
-
-.route-apps {
+/* .route-apps {
   display: flex;
   width: 100%;
-  margin: 20px 0 0px 0;
-}
+  margin: 10px 0 0px 0;
+} */
 
-.route-apps a {
+.route-links a {
   margin: 0;
   flex: 1 1 0px;
   text-align: center;
 }
 
 @media screen and (max-width: 600px) {
-  .route-apps a {
-    width: 30%;
-  }
   .route-links {
     font-size: small;
   }
