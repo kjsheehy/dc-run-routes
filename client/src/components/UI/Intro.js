@@ -1,5 +1,5 @@
 import './Intro.css';
-import Modal from './UI/Modal';
+import Modal from './Modal';
 
 function Intro(props) {
   return (

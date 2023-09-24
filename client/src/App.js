@@ -1,7 +1,7 @@
 import './App.css';
 import RouteFinder from './components/RouteFinder/RouteFinder';
-import Intro from './components/Intro';
-import Header from './components/Header';
+import Intro from './components/UI/Intro';
+import Header from './components/UI/Header';
 import { useState } from 'react';
 
 function App() {

@@ -25,3 +25,9 @@
 .route-info-value {
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .route-modal-info {
+    font-size: small;
+  }
+}

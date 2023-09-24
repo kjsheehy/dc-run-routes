@@ -7,13 +7,13 @@
 
 .route-links a {
   text-align: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .route-apps {
   display: flex;
   width: 100%;
-  margin: 15px 0 10px 0;
+  margin: 20px 0 0px 0;
 }
 
 .route-apps a {
@@ -25,5 +25,8 @@
 @media screen and (max-width: 600px) {
   .route-apps a {
     width: 30%;
+  }
+  .route-links {
+    font-size: small;
   }
 }
