@@ -8,8 +8,9 @@
   max-width: 90vw;
 }
 .route-map {
-  width: 90%;
+  width: 80%;
   margin: 1rem;
+  border-radius: 10px;
   object-fit: contain;
 }
 
