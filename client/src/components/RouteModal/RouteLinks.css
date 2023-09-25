@@ -1,15 +1,9 @@
 .route-links {
   display: flex;
   width: 100%;
-  margin: 0;
+  margin: 0 0 1rem 0;
   align-items: space-between;
 }
-
-/* .route-apps {
-  display: flex;
-  width: 100%;
-  margin: 10px 0 0px 0;
-} */
 
 .route-links a {
   margin: 0;
