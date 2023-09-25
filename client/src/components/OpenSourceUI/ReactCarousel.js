@@ -7,13 +7,11 @@ function ReactCarousel(props) {
   const mobile = window.innerWidth <= 600;
 
   const carouselStyle = {
-    maxWidth: '100%',
-    maxHeight: '70%',
+    maxWidth: '110vw',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     objectFit: 'contain',
-    marginBottom: '10px',
   };
 
   const imageOrCarousel =
@@ -32,7 +30,7 @@ function ReactCarousel(props) {
         slideBackgroundColor="white"
         slideImageFit="contain"
         thumbnails={!mobile}
-        thumbnailWidth="60px"
+        thumbnailWidth="50px"
         showNavBtn={!mobile}
         style={carouselStyle}
       />

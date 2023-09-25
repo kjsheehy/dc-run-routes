@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 100%;
+  width: 95%;
   flex-wrap: wrap;
-  margin-top: 5px;
+  margin: 10px 0 0 0;
 }
 .route-modal-info {
   display: flex;
@@ -24,4 +24,10 @@
 
 .route-info-value {
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .route-modal-info {
+    font-size: small;
+  }
 }
