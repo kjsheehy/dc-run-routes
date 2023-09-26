@@ -7,7 +7,6 @@ function ReactCarousel(props) {
   const mobile = window.innerWidth <= 600;
 
   const carouselStyle = {
-    maxWidth: '110vw',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
