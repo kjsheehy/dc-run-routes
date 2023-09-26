@@ -4,8 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  max-height: 100vh;
-  max-width: 90vw;
+  max-height: 90vh;
 }
 .route-map {
   width: 80%;
@@ -14,8 +13,14 @@
   object-fit: contain;
 }
 
-@media screen and (max-width: 600px) {
-  .route-modal {
-    max-width: 100vw;
+@media screen and (max-height: 650px) {
+  .route-map {
+    width: 50%;
+  }
+}
+
+@media screen and (max-height: 599px) {
+  .route-map {
+    width: 30%;
   }
 }

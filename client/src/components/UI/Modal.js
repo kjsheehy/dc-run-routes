@@ -16,9 +16,7 @@ function Modal(props) {
             &times;
           </div>
         </div>
-        <div className={props.className + ' modal-content'}>
-          {props.children}
-        </div>
+        <div className={props.className}>{props.children}</div>
       </div>
       <div className="overlay" onClick={closeModal}></div>
     </div>
