@@ -1,6 +1,9 @@
-.select {
-  border: 0.5px solid black;
+.form-control {
   background-color: rgb(239, 240, 232);
+}
+
+#demo-multiple-checkbox-label {
+  color: #11120e;
 }
 
 @media screen and (max-width: 600px) {
