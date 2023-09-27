@@ -15,6 +15,8 @@ const MenuProps = {
     style: {
       maxHeight: ITEM_HEIGHT * 5 + ITEM_PADDING_TOP,
       width: 200,
+      // backgroundColor: 'rgb(239, 240, 232)',
+      backgroundColor: 'rgb(239, 240, 232)',
     },
   },
 };
@@ -45,6 +47,7 @@ export default function MultipleSelectCheckmarks(props) {
           id="demo-multiple-checkbox"
           multiple
           value={values}
+          className="select"
           onChange={handleChange}
           input={<OutlinedInput label={props.label} />}
           renderValue={(selected) => selected.join(', ')}
