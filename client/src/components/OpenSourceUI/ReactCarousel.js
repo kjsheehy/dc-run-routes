@@ -1,4 +1,5 @@
 import { Carousel } from 'react-carousel-minimal';
+import './ReactCarousel.css';
 
 function ReactCarousel(props) {
   const images = props.photos.map((photoSrc) => ({ image: photoSrc }));
@@ -19,14 +20,14 @@ function ReactCarousel(props) {
     ) : (
       <Carousel
         data={images}
-        time={4000}
+        time={10000}
         width="600px"
         height="400px"
         radius="0px"
         slideNumber={false}
         automatic={false}
         dots={mobile}
-        slideBackgroundColor="white"
+        slideBackgroundColor="rgb(239, 240, 232)"
         slideImageFit="contain"
         thumbnails={!mobile}
         thumbnailWidth="50px"
