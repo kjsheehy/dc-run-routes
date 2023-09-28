@@ -25,7 +25,7 @@ function ReactCarousel(props) {
         height="400px"
         radius="0px"
         slideNumber={false}
-        automatic={true}
+        automatic={false}
         dots={mobile}
         slideBackgroundColor="rgb(239, 240, 232)"
         slideImageFit="contain"
