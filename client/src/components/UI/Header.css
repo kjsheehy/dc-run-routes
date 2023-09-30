@@ -1,5 +1,10 @@
+.page-title {
+  color: rgb(59, 60, 55);
+  font-size: 40px;
+}
+
 @media screen and (max-width: 600px) {
   .page-title {
-    margin: 0;
+    margin: 10px;
   }
 }

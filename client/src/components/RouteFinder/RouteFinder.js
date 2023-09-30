@@ -28,7 +28,6 @@ function RouteFinder(props) {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newParams),
     });
-    console.log(response.status);
     if (response.status >= 400) {
       console.log('Error while fetching routes:');
       console.dir(response);
