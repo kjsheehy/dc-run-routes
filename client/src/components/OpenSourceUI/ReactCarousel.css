@@ -11,4 +11,17 @@
     max-width: 100vw;
     max-height: 300px;
   }
+  .dots {
+    bottom: 5px;
+  }
+  .dot {
+    height: 5px;
+    width: 5px;
+    background-color: #d1d4c7;
+  }
+  .active,
+  .dot:hover {
+    height: 8px;
+    width: 8px;
+  }
 }
