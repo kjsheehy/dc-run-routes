@@ -7,10 +7,12 @@ function RouteTile(props) {
 
   function clickHandler() {
     if (!selected) setSelected(true);
+    document.body.classList.add('frozen');
   }
 
   function closeRouteModal() {
     setSelected(false);
+    document.body.classList.remove('frozen');
   }
 
   return (
@@ -28,8 +30,6 @@ function RouteTile(props) {
         </div>
         <div className="route-tile-location">{props.location}</div>
         <div className="route-tile-surface">{props.surface.join(', ')}</div>
-        {/* <div className="route-tile-features">{props.features.join(', ')}</div>
-        <div className="route-tile-type">{props.type}</div> */}
       </div>
     </div>
   );

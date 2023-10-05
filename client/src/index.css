@@ -9,6 +9,10 @@ body {
   color: rgb(17, 18, 14);
 }
 
+body.frozen {
+  overflow: hidden;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
