@@ -3,6 +3,9 @@ import RouteFinder from './components/RouteFinder/RouteFinder';
 import Intro from './components/UI/Intro';
 import Header from './components/UI/Header';
 import { useState } from 'react';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-3PFJZ019BT');
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
