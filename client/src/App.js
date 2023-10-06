@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('G-3PFJZ019BT');
+ReactGA.pageview('/dc-run-routes');
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
