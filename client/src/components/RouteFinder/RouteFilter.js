@@ -12,7 +12,7 @@ function RouteFilter(props) {
     'Alexandria',
   ];
 
-  const surfaces = ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'];
+  const surfaces = ['Paved', 'Trail'];
 
   const types = ['Loop', 'Out & Back'];
 
