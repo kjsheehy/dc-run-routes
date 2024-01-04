@@ -16,8 +16,8 @@ export default function RouteInfo(props) {
         <div className="route-info-value">{props.surface.join(', ')}</div>
       </div>
       <div className="route-modal-info">
-        <div className="route-info-label">Features</div>
-        <div className="route-info-value">{props.features.join(', ')}</div>
+        <div className="route-info-label">Difficulty</div>
+        <div className="route-info-value">{props.difficulty.join(', ')}</div>
       </div>
     </div>
   );

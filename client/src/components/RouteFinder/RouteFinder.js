@@ -16,7 +16,7 @@ function RouteFinder(props) {
     ],
     surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
     types: ['Loop', 'Out & Back'],
-    features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
+    difficulty: ['Easy', 'Medium', 'Hard'],
   });
 
   const [routes, setRoutes] = useState(false);

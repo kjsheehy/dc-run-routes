@@ -60,7 +60,7 @@ app.post(`${urlBase}/routes`, async (req, res) => {
       location: { $in: params.locations },
       surface: { $elemMatch: { $in: params.surfaces } },
       type: { $in: params.types },
-      features: { $elemMatch: { $in: params.features } },
+      difficulty: { $in: params.difficulty },
     };
 
     const routesFromDB = await queryDB(query);
