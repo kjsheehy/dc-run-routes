@@ -14,8 +14,6 @@ function RouteFilter(props) {
 
   const surfaces = ['Paved', 'Trail'];
 
-  const types = ['Loop', 'Out & Back'];
-
   const difficulty = ['Easy', 'Medium', 'Hard'];
 
   return (
@@ -43,15 +41,6 @@ function RouteFilter(props) {
           params={props.params}
           paramKey="surfaces"
           label="Surface"
-          fetchRoutes={props.fetchRoutes}
-        />
-      </div>
-      <div className="route-type filter-item">
-        <MultipleSelectCheckmarks
-          values={types}
-          params={props.params}
-          paramKey="types"
-          label="Route Type"
           fetchRoutes={props.fetchRoutes}
         />
       </div>

@@ -59,7 +59,6 @@ app.post(`${urlBase}/routes`, async (req, res) => {
       distance: { $gte: params.distance[0], $lte: params.distance[1] },
       location: { $in: params.locations },
       surface: { $elemMatch: { $in: params.surfaces } },
-      type: { $in: params.types },
       difficulty: { $in: params.difficulty },
     };
 
