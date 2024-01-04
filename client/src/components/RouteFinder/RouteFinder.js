@@ -14,8 +14,7 @@ function RouteFinder(props) {
       'N Arlington',
       'Alexandria',
     ],
-    surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
-    types: ['Loop', 'Out & Back'],
+    surfaces: ['Paved', 'Trail'],
     difficulty: ['Easy', 'Medium', 'Hard'],
   });
 
