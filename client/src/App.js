@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      {showIntro && <Intro close={closeIntro} />}
+      {/*showIntro && <Intro close={closeIntro} />*/}
       <Header />
       <RouteFinder />
     </div>
