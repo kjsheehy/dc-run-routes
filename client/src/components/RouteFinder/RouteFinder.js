@@ -14,9 +14,8 @@ function RouteFinder(props) {
       'N Arlington',
       'Alexandria',
     ],
-    surfaces: ['Road', 'Trail', 'Paved Path', 'Sidewalk', 'Boardwalk'],
-    types: ['Loop', 'Out & Back'],
-    features: ['Flat', 'Rocky', 'Big Hills', 'Rolling'],
+    surfaces: ['Paved', 'Trail'],
+    difficulty: ['Easy', 'Medium', 'Hard'],
   });
 
   const [routes, setRoutes] = useState(false);
